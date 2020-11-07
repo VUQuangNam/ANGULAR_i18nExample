@@ -37,6 +37,7 @@ import { HeaderComponent } from "./components/header/header.component";
 import { NotificationsComponent } from "./components/notifications/notifications.component";
 import { UserComponent } from "./components/user/user.component";
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { TranslateModule } from '@ngx-translate/core';
 
 @NgModule({
     declarations: [
@@ -57,7 +58,8 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
         MatSelectModule,
         MatButtonToggleModule,
         MatListModule,
-        MatDialogModule
+        MatDialogModule,
+        TranslateModule
     ],
     exports: [
         ReactiveFormsModule,
@@ -84,7 +86,8 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
         MatDialogModule,
         MatSelectModule,
         MatListModule,
-        MatProgressSpinnerModule
+        MatProgressSpinnerModule,
+        TranslateModule
     ],
     schemas: [CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA],
     providers: [
