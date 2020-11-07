@@ -1,9 +1,0 @@
-{
-    "typescript.tsdk": "./node_modules/typescript/lib",
-    "tslint.enable": false,
-    "files.exclude": {
-        "**/.github": true,
-        "**/.node_modules": true,
-        "**/.vscode": true
-    }
-}
