@@ -1,0 +1,53 @@
+<div class="container-fluid mt-4">
+    <div class="row profile__nav m-0 personal-info">
+        <mat-tab-group
+            mat-stretch-tabs
+            mat-align-tabs="center"
+            class="col outsideShadow p-0"
+        >
+            <mat-tab style="display: block;">
+                <ng-template mat-tab-label>
+                    <span>Demographics</span>
+                </ng-template>
+                <div>
+                    <app-demographics></app-demographics>
+                </div>
+            </mat-tab>
+
+            <mat-tab>
+                <ng-template mat-tab-label>
+                    <span>List of visits</span>
+                </ng-template>
+                <app-list-of-visits></app-list-of-visits>
+            </mat-tab>
+
+            <mat-tab>
+                <ng-template mat-tab-label>
+                    <span> Social history</span>
+                </ng-template>
+                <app-social-history></app-social-history>
+            </mat-tab>
+
+            <mat-tab>
+                <ng-template mat-tab-label>
+                    <span>Medical history</span>
+                </ng-template>
+                <app-medical-history></app-medical-history>
+            </mat-tab>
+
+            <mat-tab>
+                <ng-template mat-tab-label>
+                    <span>Family history</span>
+                </ng-template>
+                <app-family-history></app-family-history>
+            </mat-tab>
+            <mat-tab>
+                <ng-template mat-tab-label>
+                    <span>Immunization</span>
+                </ng-template>
+                <app-immunization></app-immunization>
+            </mat-tab>
+        </mat-tab-group>
+    </div>
+    <div class="profile__content"></div>
+</div>

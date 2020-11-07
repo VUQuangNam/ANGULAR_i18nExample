@@ -1,0 +1,69 @@
+<div class="container-fluid overflow-hidden">
+    <div class="row box">
+        <div class="table-btn">
+            <span class="material-icons">
+                keyboard_arrow_left
+            </span>
+            <p>Table</p>
+            <span class="material-icons">
+                keyboard_arrow_right
+            </span>
+        </div>
+    </div>
+    <div class="row div-table">
+        <div class="col-12 family-table">
+            <table
+                mat-table
+                class="table-hover  tableStyle w-100"
+                [dataSource]="dataSource"
+            >
+
+                <!-- Position Column -->
+                <ng-container matColumnDef="relationship">
+                    <th
+                        mat-header-cell
+                        *matHeaderCellDef
+                    > Relationship</th>
+                    <td
+                        mat-cell
+                        *matCellDef="let item"
+                    >{{item.Relationship}} </td>
+                </ng-container>
+
+                <!-- Name Column -->
+                <ng-container matColumnDef="name">
+                    <th
+                        mat-header-cell
+                        *matHeaderCellDef
+                    >Name</th>
+                    <td
+                        mat-cell
+                        *matCellDef="let item"
+                    >{{item.DiseaseName}}</td>
+                </ng-container>
+                <tr
+                    mat-header-row
+                    *matHeaderRowDef="displayedColumns; sticky: true"
+                ></tr>
+                <tr
+                    mat-row
+                    *matRowDef="let row; columns: displayedColumns;"
+                ></tr>
+            </table>
+        </div>
+    </div>
+    <div class="group-button">
+        <button (click)="openDialog()">
+            <img
+                src="assets/svg/create.svg"
+                alt=""
+            >
+        </button>
+        <button (click)="openEditDialog()">
+            <img
+                src="assets/svg/pen.svg"
+                alt=""
+            >
+        </button>
+    </div>
+</div>

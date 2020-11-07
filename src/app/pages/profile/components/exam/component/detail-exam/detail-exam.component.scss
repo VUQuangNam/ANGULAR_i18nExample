@@ -1,0 +1,81 @@
+@import "../../../../../../shared/scss/variables.scss";
+
+.nav {
+    margin-top: 10px;
+    border-radius: 20px 0px 0px 20px;
+    padding-bottom: 10px;
+    background-color: $emr-color-white;
+    flex-flow: nowrap;
+    overflow: auto;
+    max-width: 740px;
+    height: 90px;
+    .nav-item {
+        margin-left: 10px;
+        min-width: 176px;
+        .nav-title {
+            text-align: center;
+            padding-bottom: 10px;
+            width: 100%;
+        }
+        .nav-hr {
+            margin: 0px;
+        }
+        .nav-btn {
+            margin-top: 10px;
+            text-align: center;
+        }
+    }
+    .nav-item2 {
+        margin-left: 10px;
+        min-width: 260px;
+        .nav-title {
+            text-align: center;
+            padding-bottom: 10px;
+            width: 100%;
+        }
+        .nav-hr {
+            margin: 0px;
+        }
+        .nav-btn {
+            margin-top: 10px;
+            text-align: center;
+        }
+    }
+}
+
+.mat-icon-style {
+    font-size: 40px;
+}
+
+.listSection-exam {
+    padding: 20px;
+    .item-section {
+        margin-bottom: 10px;
+        width: 100%;
+    }
+}
+
+.title {
+    text-align: center;
+    background-color: #9fb9c8;
+    color: $emr-color-white;
+    border-radius: 30px;
+}
+
+.style-bt-mt {
+    border-bottom: 1px solid black;
+    margin-top: 5px;
+}
+.black {
+    border-bottom: 2px solid black;
+}
+
+.btn-openDialog {
+    position: absolute;
+    right: 0px;
+    top: 0px;
+    background: $emr-color-white;
+    height: 100%;
+    width: 100px;
+    border-radius: 0px 20px 20px 0px;
+}

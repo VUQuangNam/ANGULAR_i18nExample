@@ -1,0 +1,169 @@
+<div class="create-vitals">
+    <mat-spinner
+        *ngIf="isLoading"
+        matSuffix
+        [diameter]="18"
+    ></mat-spinner>
+    <div class="row">
+        <div class="col-9 title align-self-center">Add vitals</div>
+        <div class="col-3">
+            <button
+                class="btn btn-cancel"
+                (click)="onCloseModal()"
+            > Cancel</button>
+            <button
+                class="btn btn-save"
+                (click)="onCreateVital()"
+                [disabled]="isLoading"
+            >
+                Save
+
+            </button>
+        </div>
+    </div>
+    <div class="form-create">
+        <div class="row">
+            <div class="col-2 align-self-center">
+                Date:
+            </div>
+            <div class="col-4 align-self-center">
+                {{model.Date | date:'dd/MM/yyyy'}}
+            </div>
+            <div class="col-2 align-self-center">
+                Time:
+            </div>
+            <div class="col-4 align-self-center">
+                <mat-form-field class="example-full-width">
+                    <input
+                        type="time"
+                        matInput
+                        [(ngModel)]="model.Time"
+                        required
+                    >
+                </mat-form-field>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-2 align-self-center">
+                BP systolic:
+            </div>
+            <div class="col-4 align-self-center">
+                <mat-form-field class="example-full-width">
+                    <input
+                        matInput
+                        placeholder="BP systolic"
+                        [(ngModel)]="model.BPsystolic"
+                        required
+                        type="number"
+                    >
+                </mat-form-field>
+            </div>
+            <div class="col-2 align-self-center">
+                SpO<sub>2</sub>
+            </div>
+            <div class="col-4 align-self-center">
+                <mat-form-field class="example-full-width">
+                    <input
+                        matInput
+                        placeholder="sPO2"
+                        [(ngModel)]="model.sPO2"
+                        required
+                        type="number"
+                    >
+                </mat-form-field>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-2 align-self-center">
+                BP diastolic:
+            </div>
+            <div class="col-4 align-self-center">
+                <mat-form-field class="example-full-width">
+                    <input
+                        matInput
+                        placeholder="BP diastolic"
+                        [(ngModel)]="model.BPdiastolic"
+                        required
+                        type="number"
+                    >
+                </mat-form-field>
+            </div>
+            <div class="col-2 align-self-center">
+                Height:
+            </div>
+            <div class="col-4 align-self-center">
+                <mat-form-field class="example-full-width">
+                    <input
+                        matInput
+                        placeholder="O2 use"
+                        [(ngModel)]="model.Height"
+                        required
+                        type="number"
+                    >
+                </mat-form-field>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-2 align-self-center">
+                Pulse:
+            </div>
+            <div class="col-4 align-self-center">
+                <mat-form-field class="example-full-width">
+                    <input
+                        matInput
+                        placeholder="Pulse"
+                        [(ngModel)]="model.Pulse"
+                        required
+                        type="number"
+                    >
+                </mat-form-field>
+            </div>
+            <div class="col-2 align-self-center">
+                Temperature:
+            </div>
+            <div class="col-4 align-self-center">
+                <mat-form-field class="example-full-width">
+                    <input
+                        matInput
+                        placeholder="Temperature"
+                        [(ngModel)]="model.Temperature"
+                        required
+                        type="number"
+                    >
+                </mat-form-field>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-2 align-self-center">
+                Respiratory rate:
+            </div>
+            <div class="col-4 align-self-center">
+                <mat-form-field class="example-full-width">
+                    <input
+                        matInput
+                        placeholder="Respiratory rate"
+                        [(ngModel)]="model.RepiratoryRate"
+                        type="number"
+                        required
+                    >
+                </mat-form-field>
+            </div>
+            <div class="col-2 align-self-center">
+                Weight:
+            </div>
+            <div class="col-4 align-self-center">
+                <mat-form-field class="example-full-width">
+                    <input
+                        matInput
+                        type="number"
+                        placeholder="Weight"
+                        [(ngModel)]="model.Weight"
+                        required
+                    >
+                </mat-form-field>
+            </div>
+        </div>
+    </div>
+</div>

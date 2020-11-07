@@ -1,0 +1,104 @@
+.avatar {
+  width: 13em;
+  height: 20em;
+  border-radius: 15px;
+  margin-top: 2rem;
+  margin-left: 3rem;
+  position: relative;
+  border: 1px solid;
+  img {
+    width: 100%;
+    height: 100%;
+    border-radius: 15px;
+  }
+  .add-photo {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    bottom: 5px;
+    right: 5px;
+    filter: contrast(0.5);
+  }
+  .material-icons {
+    position: absolute;
+    bottom: 17px;
+    right: 16px;
+    color: white;
+    font-size: 21px;
+  }
+}
+
+.form{
+    height: 85vh;
+}
+
+.title{
+    line-height: 55px; 
+    font-size: 20px; 
+    color: #808080;
+}
+.content {
+  float: right;
+  margin-top: 1rem;
+  h3 {
+    margin: 0;
+    color: #707070;
+  }
+  .row {
+    margin-bottom: -25px;
+  }
+  label {
+    width: 100px;
+    color: #707070;
+  }
+}
+
+.info {
+  margin-bottom: 2rem;
+}
+
+.book-register {
+  float: right;
+  position: relative;
+  top: 5px;
+  right: 1rem;
+  button {
+    background-color: #9fb9c8;
+    width: 175px;
+    height: 40px;
+    border-radius: 20px;
+    border: none;
+    font-size: 20px;
+    color: white;
+  }
+  a {
+    font-size: 20px;
+    margin-right: 1em;
+    color: #9fb9c8;
+  }
+}
+
+.mat-form-field {
+  width: 130px;
+}
+
+.gender {
+    line-height: 50px;
+  select {
+    border: none;
+    background: none;
+    border-bottom: 1px solid;
+    width: 46%;
+  }
+}
+
+mat-icon {
+  font-size: 50px;
+  color: #707070;
+}
+
+.edit {
+  position: absolute;
+  right: 2em;
+  bottom: 0.5em;
+}

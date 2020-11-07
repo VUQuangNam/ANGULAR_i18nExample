@@ -1,0 +1,93 @@
+.container-fluid {
+    padding-top: 60px;
+    height: 75vh;
+}
+
+p {
+    margin: 0;
+    padding: 0;
+}
+
+.icon-div {
+    right: 0;
+    position: absolute;
+    bottom: 5px;
+    span {
+        margin: 0 10px;
+    }
+}
+
+input {
+    border: none;
+    background: none;
+    text-align: center;
+}
+
+button {
+    padding: 0;
+}
+
+.edit {
+    width: 100%;
+}
+
+.button-group {
+    right: 2rem;
+    position: absolute;
+    bottom: 5px;
+    img {
+        width: 30px;
+        height: 30px;
+    }
+}
+
+#table-kendo {
+    border: none;
+}
+
+.button-group {
+    position: absolute;
+    bottom: 1em;
+    right: 2em;
+    mat-icon {
+        font-size: 38px;
+    }
+}
+
+.save {
+    width: 80px;
+    height: 35px;
+    background-color: #9fb9c8;
+    border-radius: 18px;
+    color: white;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.group-button {
+    position: absolute;
+    right: 1em;
+    bottom: 0.5em;
+    button {
+        border: none;
+        outline: none;
+        background: none;
+        padding: 0 10px;
+        img {
+            width: 30px;
+            height: 30px;
+        }
+    }
+}
+
+.menu {
+    button {
+        outline: none;
+    }
+}
+
+.immu-table {
+    height: 60vh;
+    overflow: auto;
+    overflow-x: hidden;
+}

@@ -1,0 +1,78 @@
+
+#my-div {
+    width: 30px;
+    height: 30px;
+    background-color: white;
+    border-radius: 50%;
+    float: left;
+    margin: 5px 5px 5px 5px;
+#my-div , img {
+    border-radius: 15px;
+}
+  
+}
+.div1 {
+    border: none;
+    border-radius: inherit;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    border-radius: 15px;
+    background-color: #dee7ec;
+    display: flex;
+    align-items: center;
+    margin-left: 5px;
+
+}
+#my-div1 {
+    width: 30px;
+    height: 30px;
+    background-color: white;
+    border-radius: 50%;
+    float: left;
+    margin: 5px 5px 5px 5px;
+    
+#my-div1 , img {
+    border-radius: 15px;
+}
+    
+}
+.div2 {
+    border:none;
+    margin-bottom: 10px;
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    background-color: white
+    
+}
+#my-div2 {
+    width: 30px;
+    height: 30px;
+    background-color: white;
+    border-radius: 50%;
+    float: left;
+    margin: 5px 5px 5px 5px;
+#my-div2 , img{
+    border-radius: 15px;
+}
+    
+}
+.div3 {
+    border: none;
+    margin-bottom: 10px;
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    background-color: white;
+}
+.table {
+    width: 99%;
+    display: flex;
+    flex-direction: column;
+    border: none;
+    border-radius: 20px;
+    background-color: rgba(244, 248, 248, 0.404);
+    box-shadow:  4px 4px 10px -5px black;
+    margin-right: 20px;
+    margin: 28px 0px;
+}

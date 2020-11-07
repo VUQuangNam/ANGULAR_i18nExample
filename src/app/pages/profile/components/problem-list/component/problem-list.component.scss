@@ -1,0 +1,277 @@
+h1,
+h2,
+h3,
+h4,
+h5,
+p {
+    padding: 0;
+    margin: 0;
+}
+
+.problem__list {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    // padding: 10px;
+    // margin-top: 30px;
+}
+
+.problem__list__header {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    .personal__info {
+        width: 48%;
+        height: 20vh;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        img {
+            height: 100%;
+            width: 120px;
+            border-radius: 15px;
+        }
+        .info__content {
+            height: auto;
+            width: 100%;
+            padding: 20px;
+            div {
+                display: flex;
+                justify-content: flex-start;
+                align-items: center;
+                h5 {
+                    width: 25%;
+                    font-size: 12px;
+                    color: #707070;
+                }
+                p {
+                    width: 75%;
+                    font-size: 14px;
+                    color: black;
+                }
+            }
+        }
+    }
+    .personal__note {
+        width: 48%;
+        height: 20vh;
+        padding: 10px 20px;
+        word-break: break-all;
+        h3 {
+            font-size: 16px;
+            color: #707070;
+        }
+        p {
+            font-size: 16px;
+            color: black;
+        }
+    }
+}
+
+.problem__list__body {
+    display: flex;
+    justify-content: flex-start;
+    padding: 10px 20px 20px 20px;
+    margin-top: 20px;
+    position: relative;
+    height: 50vh;
+    // margin-left: 5px;
+    //   margin-right: 5px;
+    .old__problem {
+        // border-right: thin solid;
+        width: 70%;
+        padding-right: 1rem;
+        // height: 220px;
+        overflow: hidden;
+        .problem__group {
+            width: 98%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            // margin: 5px 0px;
+            margin-bottom: 1em;
+            // margin-top: 1rem;
+            .title-problem {
+                width: 16em;
+                height: 30px;
+                padding-left: 20px;
+                background-color: white;
+                border-radius: 20px;
+                display: flex;
+                align-items: center;
+                position: relative;
+                h4 {
+                    font-size: 14px;
+                    color: #707070;
+                }
+                img {
+                    right: 10px;
+                    position: absolute;
+                }
+            }
+            button {
+                height: 35px;
+                color: #707070;
+                font-size: 12px;
+                font-weight: 600;
+                border-radius: 15px;
+                margin: 0 5px;
+                border: none;
+                box-shadow: 5px 5px 9px #c9c9c9, -5px -5px 9px #ffffff;
+                &:focus {
+                    outline: none;
+                }
+                &:active {
+                    box-shadow: inset 5px 5px 10px #c2c2c2, inset -5px -5px 10px #ffffff;
+                }
+            }
+            .btn__style__active {
+                color: #9fb9c8;
+                box-shadow: inset 5px 5px 10px #c2c2c2, inset -5px -5px 10px #ffffff;
+            }
+        }
+    }
+    .new__problem {
+        width: 40%;
+        padding-left: 20px;
+        .content {
+            background-color: #ffffff;
+            border-radius: 20px;
+            width: 100%;
+            padding: 5px 20px;
+            margin-bottom: 1em;
+            position: relative;
+            img {
+                right: 20px;
+                position: absolute;
+                top: 10px;
+                height: 15px;
+            }
+        }
+    }
+}
+
+.btn__start {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 1em;
+    margin-right: 2em;
+    button {
+        width: 120px;
+        color: #ffffff;
+        font-weight: 600px;
+        border: none;
+        background: #9fb9c8;
+        padding: 10px;
+        font-size: x-large;
+    }
+}
+
+.add-button {
+    border: none;
+    position: absolute;
+    bottom: 4rem;
+    right: 1rem;
+    padding: 0;
+    img {
+        width: 30px;
+        height: 30px;
+    }
+}
+
+.button__group {
+    line-height: 30px;
+    height: 30px;
+}
+
+label {
+    font-weight: bold;
+    background-color: #f0f0f0;
+    text-align: center;
+    border-radius: 15px;
+    cursor: pointer;
+    width: 65px;
+    color: #b3b3b3;
+    height: 30px;
+    box-shadow: 5px 5px 9px #c9c9c9, -5px -5px 9px #ffffff;
+    font-size: 12px;
+    p {
+        line-height: 30px;
+    }
+}
+
+input[type="checkbox"] {
+    visibility: hidden;
+}
+
+input[type="checkbox"]:checked + label {
+    color: #0080c9;
+    box-shadow: inset 0px 3px 6px #c9c9c9, inset -3px -3px 6px #cbd7c2;
+}
+
+input[type="checkbox"]:checked + label:after {
+    opacity: 1;
+}
+
+#problem {
+    height: 30px;
+    width: 50%;
+    border: none;
+}
+
+.group-btn {
+    position: absolute;
+    bottom: 5em;
+    right: 0;
+    width: 130px;
+    .save-btn {
+        padding: 0;
+    }
+}
+
+.hide_save_btn {
+    position: absolute;
+    width: 130px;
+    bottom: 0;
+    right: 10px;
+    .save-btn {
+        display: none;
+    }
+}
+
+::ng-deep .mat-form-field-appearance-legacy .mat-form-field-underline {
+    height: 0;
+}
+
+.mat-form-field {
+    width: 99%;
+}
+
+textarea {
+    width: 100%;
+    background: none;
+    border: none;
+    height: 60px;
+}
+
+.old-problem {
+    margin-top: 0.5rem;
+    height: 270px;
+    overflow: auto;
+    padding-top: 10px;
+}
+
+.img-create {
+    height: 20px;
+    width: 20px;
+}
+
+.r-30 {
+    right: 40px !important;
+}
+
+.input-update-problem {
+    border: 0px;
+    border-bottom: 1px solid;
+    width: 85%;
+}

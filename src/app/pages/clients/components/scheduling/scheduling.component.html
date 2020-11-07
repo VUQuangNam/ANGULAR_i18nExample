@@ -1,0 +1,262 @@
+<div class="container-fluid h-100">
+    <div class="row">
+        <div class="col-1">
+            <mat-icon class="back" (click)="back()">keyboard_arrow_left</mat-icon>
+        </div>
+        <div class="col-5">
+            <h3 class="title">
+                Scheduling
+            </h3>
+        </div>
+        <div class="col-6">
+            <div class="btn-book">
+                <button>Book</button>
+            </div>
+        </div>
+    </div>
+    <div class="row justify-content-around mt-3 detail" >
+        <div class="schedule col-4">
+            <div class="row avatar outsideShadow">
+                <div class="avatar col-4 px-0">
+                    <img src="assets/images/profile1.png" alt="" width="100%" />
+                </div>
+                <div class="avatar__info col-8" >
+                    <h3>Tran Thi Thu</h3>
+                    <h4>#23456</h4>
+                </div>
+            </div>
+            <div class="row outsideShadow">
+                <div class="infoLine">
+                    <h4>Date</h4>
+                    <h2>18/2/2020</h2>
+                </div>
+            </div>
+            <div class="row outsideShadow">
+                <div class="infoLine">
+                    <h4>From</h4>
+                    <h3>to</h3>
+                </div>
+            </div>
+            <div class="row outsideShadow">
+                <div class="infoLine">
+                    <h4>Doctor</h4>
+                </div>
+            </div>
+            <div class="row">
+                <div class="calendar">
+                    <div class="calendar__title col">
+                        <h4>Today</h4>
+                        <h4>February 2020</h4>
+                    </div>
+                    <div class="calendar__date">
+                        <div class="calendar__day">S</div>
+                        <div class="calendar__day">M</div>
+                        <div class="calendar__day">T</div>
+                        <div class="calendar__day">W</div>
+                        <div class="calendar__day">T</div>
+                        <div class="calendar__day">F</div>
+                        <div class="calendar__day">S</div>
+                        <div class="calendar__number"></div>
+                        <div class="calendar__number"></div>
+                        <div class="calendar__number"></div>
+                        <div class="calendar__number">1</div>
+                        <div class="calendar__number">2</div>
+                        <div class="calendar__number">3</div>
+                        <div class="calendar__number">4</div>
+                        <div class="calendar__number">5</div>
+                        <div class="calendar__number">6</div>
+                        <div class="calendar__number" matBadge="" matBadgeColor="accent">
+                            7
+                        </div>
+                        <div class="calendar__number">8</div>
+                        <div class="calendar__number">9</div>
+                        <div class="calendar__number">10</div>
+                        <div class="calendar__number">11</div>
+                        <div class="calendar__number">12</div>
+                        <div class="calendar__number">13</div>
+                        <div class="calendar__number">14</div>
+                        <div class="calendar__number">15</div>
+                        <div class="calendar__number">16</div>
+                        <div class="calendar__number">17</div>
+                        <div class="calendar__number calendar__number--current">18</div>
+                        <div class="calendar__number">19</div>
+                        <div class="calendar__number">20</div>
+                        <div class="calendar__number">21</div>
+                        <div class="calendar__number">22</div>
+                        <div class="calendar__number">23</div>
+                        <div class="calendar__number">24</div>
+                        <div class="calendar__number">25</div>
+                        <div class="calendar__number">26</div>
+                        <div class="calendar__number">27</div>
+                        <div class="calendar__number">28</div>
+                        <div class="calendar__number">29</div>
+                        <div class="calendar__number">30</div>
+                    </div>
+                    <div class="calendar__footer col">
+                        <h4 class="footer1">Schedule</h4>
+                        <h4 class="footer2">Repeated clients</h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- <div class="col-8 outsideShadow" style="height: 98% !important"> -->
+        <!-- <div>
+                <table class="schedule-timeline">
+                    <tr>
+                        <th></th>
+                        <th></th>
+                        <th>6 AM
+                            <p></p>
+                        </th>
+                        <th>7 AM
+                            <p></p>
+                        </th>
+                        <th>8 AM
+                            <p></p>
+                        </th>
+                        <th>9 AM
+                            <p></p>
+                        </th>
+                        <th>10 AM
+                            <p></p>
+                        </th>
+                        <th>11 AM
+                            <p></p>
+                        </th>
+                        <th>12 PM
+                            <p></p>
+                        </th>
+                        <th>1 PM
+                            <p></p>
+                        </th>
+                    </tr>
+                    <tr>
+                        <td>Last doctor</td>
+                        <td>
+                            <img src="assets/images/dr1.png" alt="" width="45px" height="45px" />
+                            <h4>Dr.Ton</h4>
+                        </td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>Last doctor</td>
+                        <td>
+                            <img src="assets/images/dr2.png" alt="" width="45px" height="45px" />
+                            <h4>Dr.Ton</h4>
+                        </td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>
+                            <img src="assets/images/dr2.png" alt="" width="45px" height="45px" />
+                            <h4>Dr.Ton</h4>
+                        </td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>
+                            <img src="assets/images/dr2.png" alt="" width="45px" height="45px" />
+                            <h4>Dr.Ton</h4>
+                        </td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>
+                            <img src="assets/images/dr2.png" alt="" width="45px" height="45px" />
+                            <h4>Dr.Ton</h4>
+                        </td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>
+                            <img src="assets/images/dr2.png" alt="" width="45px" height="45px" />
+                            <h4>Dr.Ton</h4>
+                        </td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>
+                            <img src="assets/images/dr2.png" alt="" width="45px" height="45px" />
+                            <h4>Dr.Ton</h4>
+                        </td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                </table>
+            </div> -->
+        <div class="col-8 calender">
+            <ejs-schedule width="100%" [views]="scheduleViews" [eventSettings]="eventSettings" [group]="group" [currentView]="currentView" [rowAutoHeight]="rowAutoHeight">
+                <e-resources>
+                    <e-resource field="RoomId" title="Room Type" [dataSource]="resourceDataSource" [allowMultiple]="allowMultiple" name="MeetingRoom" textField="text" idField="id" colorField="color">
+                        ></e-resource>
+                    <ng-template #resourceHeaderTemplate let-data>
+                        <div class="template-wrap">
+                            <div class="employee-category">
+                                <div>
+                                    <img src="assets/images/avatar.png" alt=""  />
+                                </div>
+                                <div class="employee-name" >Dr.Ton</div>
+                            </div>
+                        </div>
+                    </ng-template>
+                    <e-views>
+                        <e-view option="TimelineDay"></e-view>
+                    </e-views>
+                </e-resources>
+            </ejs-schedule>
+        </div>
+    </div>
+</div>

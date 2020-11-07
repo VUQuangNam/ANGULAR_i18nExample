@@ -1,0 +1,53 @@
+.add-button {
+    button {
+        border: none;
+        outline: none;
+        background: none;
+    }
+    position: absolute;
+    right: 20px;
+    bottom: 10px;
+}
+
+::ng-deep .calendar {
+    .e-schedule-toolbar-container {
+        position: fixed;
+        top: 2em;
+        left: 300px;
+        width: 400px;
+        border-radius: 15px;
+        z-index: 4;
+    }
+    .e-toolbar-right {
+        display: none !important;
+    }
+    .e-schedule .e-schedule-toolbar {
+        background: none !important;
+        border-radius: 15px !important;
+        box-shadow: 5px 5px 9px #c9c9c9, -5px -5px 9px #ffffff !important;
+    }
+    .e-schedule .e-schedule-toolbar .e-toolbar-items {
+        border-radius: 15px !important;
+    }
+    .e-schedule .e-schedule-toolbar .e-toolbar-items.e-tbar-pos {
+        height: 50px;
+    }
+    .e-toolbar-item.e-date-range.e-overflow-show {
+        position: relative;
+        left: 110px;
+    }
+    .e-toolbar-item.e-next.e-tbtn-align.e-overflow-show {
+        position: absolute;
+        left: 360px;
+    }
+}
+
+.calender-title {
+    p {
+        font-size: 20px;
+        width: 140px;
+        font-weight: 600;
+        height: 55px;
+        line-height: 55px;
+    }
+}

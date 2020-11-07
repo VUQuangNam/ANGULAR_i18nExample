@@ -1,0 +1,65 @@
+<div class="row m-0">
+    <div class="col-2"></div>
+    <div class="col-8 follow-up">
+        <div class="row">
+            <div class="col-7">
+                <div class="row">
+                    <div class="follow col-6">Follow up in:</div>
+                    <div *ngIf="timeActive == 1" class="time col-6">{{quantityNumber}} hours</div>
+                    <div *ngIf="timeActive == 2" class="time col-6">{{quantityNumber}} days</div>
+                    <div *ngIf="timeActive == 3" class="time col-6">{{quantityNumber}} weeks</div>
+                    <div *ngIf="timeActive == 4" class="time col-6">{{quantityNumber}} months</div>
+                    <div *ngIf="timeActive == 5" class="time col-6">{{quantityNumber}} years</div>
+                </div>
+                <div class="row mt-3">
+                    <div class="col-9 row list-quantity">
+                        <button *ngFor="let item of quantity; let ix = index" (click)="clickQuantity(item)" class="col-6 btn btn-quantity" [ngClass]="{'btn-quantity-active': item == quantityNumber}" [class]="(ix % 2) == 0 ? 'r10': ''">
+                            {{item}}
+                        </button>
+                        <div class="col-12 btn btn-quantity " style="text-align: start; padding-left: 10px; line-height: 30px; margin-left: -10px;">
+                            Other:
+                            <input class="other" type="text">
+                        </div>
+                        <div class="row justify-content-between">
+                            <input class="date" type="datetime-local" name="" [(ngModel)]="followDate" id="">
+                        </div>
+                    </div>
+                    <div class="col-3 row" style="display: flow-root;">
+                        <button *ngFor="let item of time" (click)="clickTimeActive(item)" [ngClass]="{'btn-quantity-active': item.id == timeActive}" class="col-12 btn btn-quantity min-width-100px">
+                            {{item.Name}} 
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-4">
+                <div class="row">
+                    <div class="follow col-6">Where:</div>
+                    <div *ngIf="whereActive == 1" class="time col-6">Hospital</div>
+                    <div *ngIf="whereActive == 2" class="time col-6">Clinic</div>
+                    <div *ngIf="whereActive == 3" class="time col-6">Home</div>
+                </div>
+                <div class="row mt-3">
+                    <button class="col-12 btn btn-quantity" *ngFor="let item of Where" (click)="clickWhereActive(item)" [ngClass]="{'btn-quantity-active': whereActive == item.id}">
+                        {{item.Name}} 
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-2">
+
+    </div>
+    <div class="row mx-auto mt-1">
+        <div class="confirm">
+            <button (click)="confirmButton()">Confirm</button>
+        </div>
+    </div>
+
+</div>
+<div class="row home-care mt-1">
+    Do you need Homecare?
+    <div class="button-yes-no">
+        <button (click)="clickHomeCare(1)" [ngClass]="{'button-active': homeCare == 1}">Yes</button>
+        <button (click)="clickHomeCare(0)" [ngClass]="{'button-active': homeCare == 0}">No</button>
+    </div>
+</div>

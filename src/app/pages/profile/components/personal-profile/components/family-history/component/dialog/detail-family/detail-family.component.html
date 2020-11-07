@@ -1,0 +1,83 @@
+<div class="container" style="margin-top: 2em">
+  <div class="row">
+    <div class="col-9 add-history">Details family history</div>
+    <div class="col-3 btn-1">
+      <div class="button-group">
+        <button
+          class="btn-cancel"
+          style="border: none; color: #9fb9c8"
+          (click)="closeDialog()"
+        >
+          Cancel
+        </button>
+        <button class="btn-save" (click)="save()">Save</button>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="scroll-dialog">
+  <div class="container">
+    <div class="row align-items-center">
+      <div *ngIf="checkFamily == 1" class="col-5 question">
+        Did anyone in the family have <span>Heart Attack</span>?
+      </div>
+      <div *ngIf="checkFamily == 2" class="col-5 question">
+        Did anyone in the family have <span>Stroke</span>?
+      </div>
+      <div *ngIf="checkFamily == 3" class="col-5 question">
+        Did anyone in the family have <span>Dementia</span>?
+      </div>
+      <div *ngIf="checkFamily == 4" class="col-5 question">
+        Did anyone in the family have <span>Diabetes</span>?
+      </div>
+      <div *ngIf="checkFamily == 5" class="col-5 question">
+        Did anyone in the family have <span>High blood pressure</span>?
+      </div>
+      <div *ngIf="checkFamily == 6" class="col-5 question">
+        Did anyone in the family have <span>Cancer</span>?
+      </div>
+      <div class="btn">
+        <input
+          id="heart-no"
+          [checked]="heartAttack == 0"
+          (click)="selectType(0)"
+          type="radio"
+        />
+        <label for="heart-no" class="">
+          <p>No</p>
+        </label>
+        <input
+          [checked]="heartAttack == 1"
+          (click)="selectType(1)"
+          id="heart-yes"
+          type="radio"
+        />
+        <label for="heart-yes" class="">
+          <p>Yes</p>
+        </label>
+      </div>
+    </div>
+  </div>
+  <div [hidden]="!heartAttack" class="container mb-5">
+    <div class="row align-items-start">
+      <div class="col-5 question">Who in your family had it?</div>
+      <div class="col-6 family">
+        <div *ngFor="let item of listRelationShip; let index = index">
+          <input
+            id="{{ item.idRelationShip }}-heartAttack"
+            (click)="updateRelationShipNumbericKey(item.idRelationShip)"
+            [checked]="item.idRelationShip == isChecked"
+            type="radio"
+          />
+          <label
+            for="{{ item.idRelationShip }}-heartAttack"
+            class="family-people"
+          >
+            <p>{{ item.Name }}</p>
+          </label>
+        </div>
+      </div>
+    </div>
+  </div>
+  <hr style="width: 90%; background-color: #707070" />
+</div>

@@ -1,0 +1,35 @@
+<div class="container" style="margin-top: 2em">
+  <div class="row">
+    <div class="col-9 add-history">Details Immunization</div>
+    <div class="col-3 btn-1">
+      <div class="button-group">
+        <button
+          class="btn-cancel"
+          style="border: none; color: #9fb9c8"
+          (click)="closeDialog()"
+        >
+          Cancel
+        </button>
+        <button class="btn-save" (click)="updateItem()">Save</button>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="container">
+  <div class="row">
+    <div class="col-2 title" style="margin-top: 20px">Vaccines:</div>
+    <div class="col-10">
+      <mat-form-field class="example-full-width">
+        <input matInput [(ngModel)]="vaccine" value="" />
+      </mat-form-field>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-2 title" style="margin-top: 20px">Date:</div>
+    <div class="col-10">
+      <mat-form-field class="example-full-width">
+        <input matInput [(ngModel)]="appliedDate" value="" />
+      </mat-form-field>
+    </div>
+  </div>
+</div>

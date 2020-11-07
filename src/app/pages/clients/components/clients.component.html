@@ -1,0 +1,250 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-6 clients">
+            <h3 >Clients</h3>
+        </div>
+        <div class="col-6 search">
+            <app-user></app-user>
+            <img  (click)="openDialog()" src="assets/svg/search.svg" alt="">
+        </div>
+    </div>
+    <!-- start openClients -->
+    <div [hidden]="showOpenClients" class="outsideShadow w-100 mt-2 open-files">
+        <div class="row justify-content-between title">
+            <h3>Open files</h3>
+            <h3 (click)="showAllOpenClients()">View all</h3>
+        </div>
+        <div class="row client-info justify-content-between">
+            <div class="box-info"  *ngFor="let item of patients">
+                <div class=" avatar" routerLink="/pages/profile/detail/{{item.PatientId}}/profile-info">
+                    <img src="{{item.MediaURL}}" alt="">
+                </div>
+                <div class="content" routerLink="/pages/profile/detail/{{item.PatientId}}/profile-info">
+                    <div >
+                        <b>{{item.LastName}} {{item.FirstName}}</b>
+                        <b>ID: {{item.PatientId}}</b>
+                    </div>
+                    <div>
+                        <p>Last visits: 13/2/2020</p>
+                        <p>Up coming Visit: 18/02/2020</p>
+                    </div>
+                </div>
+                <div class="bg-img">
+                    <img src="assets/images/logoChat.png" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- end openClient -->
+
+    <!-- start view all open clients -->
+    <div [hidden]="hideOpenClients" class="outsideShadow w-100 mt-2 all-open-clients">
+        <div class="row justify-content-between title" >
+            <h3>Open files</h3>
+            <h3 (click)="viewLessOpenClients()">View less</h3>
+        </div>
+        <div class="row open-all">
+            <div class="box-info"  *ngFor="let item of openClients">
+                <div class="avatar" routerLink="/pages/profile/detail/{{item.PatientId}}/profile-info">
+                    <img src="{{item.MediaURL}}" alt="">
+                </div>
+                <div class="content" routerLink="/pages/profile/detail/{{item.PatientId}}/profile-info">
+                    <div >
+                        <b>{{item.LastName}} {{item.FirstName}}</b>
+                        <br>
+                        <b>ID: {{item.PatientId}}</b>
+                    </div>
+                    <div>
+                        <p >Last visits: 13/2/2020</p>
+                        <p>Up coming Visit: 18/02/2020</p>
+                    </div>
+                </div>
+                <div class="bg-img">
+                    <img src="assets/images/logoChat.png" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- end view all open clients -->
+
+    <!-- start schedule -->
+    <div [hidden]="showOpenClients" class="outsideShadow w-100 mt-2 open-files">
+        <div class="row justify-content-between title" >
+            <h3>Schedule</h3>
+            <h3 (click)="showAllSchedule()">View all</h3>
+        </div>
+        <div class="row client-info justify-content-between">
+            <div class="box-info" *ngFor="let item of patients" routerLink="/pages/profile/detail/{{item.PatientId}}/profile-info">
+                <div class="avatar">
+                    <img src="{{item.MediaURL}}" alt="">
+                </div>
+                <div class="content">
+                    <div >
+                        <b>{{item.LastName}} {{item.FirstName}}</b>
+                        <b>ID: {{item.PatientId}}</b>
+                    </div>
+                    <div>
+                        <p >Last visits: 13/2/2020</p>
+                        <p>Up coming Visit: 18/02/2020</p>
+                    </div>
+                </div>
+                <div class="bg-img">
+                    <img src="assets/images/logoChat.png" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- end schedule -->
+
+    <!-- start all Schedule -->
+    <div [hidden]="hideSchedule" class="outsideShadow w-100 mt-2 all-open-clients">
+        <div class="row justify-content-between title" >
+            <h3>Schedule</h3>
+            <h3 (click)="viewLessSchedule()">View less</h3>
+        </div>
+        <div class="row open-all">
+            <div class="box-info"  *ngFor="let item of patients">
+                <div class="avatar" routerLink="/pages/profile/detail/{{item.PatientId}}/profile-info">
+                    <img src="{{item.MediaURL}}" alt="">
+                </div>
+                <div class="content" routerLink="/pages/profile/detail/{{item.PatientId}}/profile-info">
+                    <div >
+                        <b>{{item.LastName}} {{item.FirstName}}</b>
+                        <br>
+                        <b>ID: {{item.PatientId}}</b>
+                    </div>
+                    <div>
+                        <p >Last visits: 13/2/2020</p>
+                        <p>Up coming Visit: 18/02/2020</p>
+                    </div>
+                </div>
+                <div class="bg-img">
+                    <img src="assets/images/logoChat.png" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- end all schedule -->
+
+    <!-- start last results -->
+    <div [hidden]="showOpenClients" class="outsideShadow w-100 mt-2 open-files">
+        <div class="row justify-content-between title" >
+            <h3>Last results</h3>
+            <h3 (click)="showAllLastResults()">View all</h3>
+        </div>
+        <div class="row client-info justify-content-between">
+            <div class="box-info"  *ngFor="let item of patients" routerLink="/pages/profile/detail/{{item.PatientId}}/profile-info">
+                <div class="avatar">
+                    <img src="{{item.MediaURL}}" alt="">
+                </div>
+                <div class="content">
+                    <div >
+                        <b>{{item.LastName}} {{item.FirstName}}</b>
+                        <b>ID: {{item.PatientId}}</b>
+                    </div>
+                    <div>
+                        <p >Last visits: 13/2/2020</p>
+                        <p>Up coming Visit: 18/02/2020</p>
+                    </div>
+                </div>
+                <div class="bg-img">
+                    <img src="assets/images/logoChat.png" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- end last results -->
+
+    <!-- start all last results -->
+    <div [hidden]="hideLastResults" class="outsideShadow w-100 mt-2 all-open-clients">
+        <div class="row justify-content-between title" >
+            <h3>Last results</h3>
+            <h3 (click)="viewLessLastResults()">View less</h3>
+        </div>
+        <div class="row open-all">
+            <div class="box-info" *ngFor="let item of patients">
+                <div class="avatar" routerLink="/pages/profile/detail/{{item.PatientId}}/profile-info">
+                    <img src="{{item.MediaURL}}" alt="">
+                </div>
+                <div class="content" routerLink="/pages/profile/detail/{{item.PatientId}}/profile-info">
+                    <div >
+                        <b>{{item.LastName}} {{item.FirstName}}</b>
+                        <br>
+                        <b>ID: {{item.PatientId}}</b>
+                    </div>
+                    <div>
+                        <p >Last visits: 13/2/2020</p>
+                        <p>Up coming Visit: 18/02/2020</p>
+                    </div>
+                </div>
+                <div class="bg-img">
+                    <img src="assets/images/logoChat.png" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- end all last results -->
+
+    <!-- start request for review -->
+    <div [hidden]="showOpenClients" class="outsideShadow w-100 mt-2 open-files">
+        <div class="row justify-content-between title" >
+            <h3>Request for review</h3>
+            <h3 (click)="showAllReview()">View all</h3>
+        </div>
+        <div class="row client-info justify-content-between">
+            <div class="box-info"  *ngFor="let item of patients" routerLink="/pages/profile/detail/{{item.PatientId}}/profile-info">
+                <div class="avatar">
+                    <img src="{{item.MediaURL}}" alt="">
+                </div>
+                <div class="content">
+                    <div >
+                        <b>{{item.LastName}} {{item.FirstName}}</b>
+                        <b>ID: {{item.PatientId}}</b>
+                    </div>
+                    <div>
+                        <p >Last visits: 13/2/2020</p>
+                        <p>Up coming Visit: 18/02/2020</p>
+                    </div>
+                </div>
+                <div class="bg-img">
+                    <img src="assets/images/logoChat.png" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- end request for review -->
+
+    <!-- start all request for review -->
+    <div [hidden]="hideReview" class="outsideShadow w-100 mt-2 all-open-clients">
+        <div class="row justify-content-between title" >
+            <h3>Request for review</h3>
+            <h3 (click)="viewLessReview()">View less</h3>
+        </div>
+        <div class="row open-all">
+            <div class="box-info"  *ngFor="let item of patients">
+                <div class="avatar" routerLink="/pages/profile/detail/{{item.PatientId}}/profile-info">
+                    <img src="{{item.MediaURL}}" alt="">
+                </div>
+                <div class="content" routerLink="/pages/profile/detail/{{item.PatientId}}/profile-info">
+                    <div >
+                        <b>{{item.LastName}} {{item.FirstName}}</b>
+                        <br>
+                        <b>ID: {{item.PatientId}}</b>
+                    </div>
+                    <div>
+                        <p >Last visits: 13/2/2020</p>
+                        <p>Up coming Visit: 18/02/2020</p>
+                    </div>
+                </div>
+                <div class="bg-img">
+                    <img src="assets/images/logoChat.png" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- end all request for review -->
+
+    <button class="add-button" (click)="createPatient()">
+        <img src="assets/svg/create.svg" alt="">
+    </button>
+</div>

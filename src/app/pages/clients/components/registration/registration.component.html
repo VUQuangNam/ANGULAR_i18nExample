@@ -1,0 +1,164 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-1">
+      <mat-icon (click)="back()">keyboard_arrow_left</mat-icon>
+    </div>
+    <div class="col-5 title">
+      <h3>Registration</h3>
+    </div>
+    <div class="col-6">
+      <div class="book-register">
+        <a routerLink="/pages/clients/reason-booking"
+          >Book</a
+        >
+        <button (click)="createCustomer()">Register only</button>
+      </div>
+    </div>
+  </div>
+  <div class="outsideShadow w-100">
+    <div class="container">
+      <div class="row">
+        <div class="col-3">
+          <div class="avatar insideShadow">
+            <img
+              [src]="profileImageString"
+              *ngIf="profileImageString"
+              class="img-fluid"
+            /><br />
+            <label for="profileImage">
+              <img class="add-photo" src="assets/svg/logoChat.svg" alt="" />
+              <span class="material-icons"> add_a_photo </span>
+            </label>
+            <input
+              #ProfileImage
+              type="file"
+              accept="image/*"
+              id="profileImage"
+              (change)="processFileProfileImage(ProfileImage.files)"
+              hidden
+              required
+            />
+            <br />
+          </div>
+          <!-- <div class="avatar">
+                        <img [src]="profileImageString" *ngIf="profileImageString" class="img-fluid"
+                        class="w-100 h-100 mb-1 ">
+                    <label for="profileImage"><i class="fa fa-camera" aria-hidden="true"></i></label>
+                    <input #ProfileImage type="file" accept='image/*' id="profileImage"
+                        (change)="processFileProfileImage(ProfileImage.files)" hidden required>
+                    </div> -->
+        </div>
+        <div class="col-9 content">
+          <div class="info">
+            <form action=""></form>
+            <div class="row">
+              <div class="col-6">
+                <label>First Name</label>
+                <mat-form-field>
+                  <input matInput [(ngModel)]="firstName" />
+                </mat-form-field>
+              </div>
+              <div class="col-6 gender">
+                <label>Gender</label>
+                <select name="" id="" [(ngModel)]="gender">
+                  <option value="1">Male</option>
+                  <option value="2">Female</option>
+                </select>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-6">
+                <label>Last Name</label>
+                <mat-form-field>
+                  <input matInput [(ngModel)]="lastName" />
+                </mat-form-field>
+              </div>
+              <div class="col-6">
+                <label>Date of birth</label>
+                <mat-form-field>
+                  <input type="date" matInput [(ngModel)]="DOB" />
+                </mat-form-field>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-6">
+                <label>Phone</label>
+                <mat-form-field>
+                  <input matInput [(ngModel)]="phone" />
+                </mat-form-field>
+              </div>
+              <div class="col-6">
+                <label>National ID</label>
+                <mat-form-field>
+                  <input matInput [(ngModel)]="nationalId" />
+                </mat-form-field>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-6">
+                <label>Email</label>
+                <mat-form-field>
+                  <input matInput [(ngModel)]="email" />
+                </mat-form-field>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-6">
+                <label>Address</label>
+                <mat-form-field>
+                  <textarea matInput rows="1" [(ngModel)]="address"></textarea>
+                </mat-form-field>
+              </div>
+            </div>
+          </div>
+          <hr />
+          <div class="contact">
+            <p>Emergency contact</p>
+            <div class="row">
+              <div class="col-6">
+                <label>First Name</label>
+                <mat-form-field>
+                  <input matInput [(ngModel)]="RelationshipFirstName" />
+                </mat-form-field>
+              </div>
+              <div class="col-6">
+                <label>Relationship</label>
+                <select 
+                class="mergency-relationship"
+                  name=""
+                  id=""
+                  (change)="clickRelationship($event.target.value)"
+                >
+                  <option
+                    value="{{ item.NumericKey }}"
+                    *ngFor="let item of listRelationship"
+                    [selected]="item.NumericKey === relationship"
+                  >
+                    {{ item.Value }}
+                  </option>
+                </select>
+                <!-- <input matInput [(ngModel)]="relationship"> -->
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-6">
+                <label>Last Name</label>
+                <mat-form-field>
+                  <input matInput [(ngModel)]="RelationshipLastName" />
+                </mat-form-field>
+              </div>
+              <div class="col-6">
+                <label>Phone</label>
+                <mat-form-field>
+                  <input matInput [(ngModel)]="emergencyPhone" />
+                </mat-form-field>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <br />
+    </div>
+  </div>
+</div>

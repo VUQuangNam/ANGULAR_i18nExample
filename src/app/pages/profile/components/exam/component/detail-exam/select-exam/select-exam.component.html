@@ -1,0 +1,49 @@
+<div class="container-fluid search-dialog">
+    <div class="row ">
+        <div class="search mx-auto mt-4">
+            <input
+                placeholder="Search"
+                (keyup)="searchExam($event.target.value)"
+                type="text"
+            >
+            <mat-icon>search</mat-icon>
+        </div>
+    </div>
+    <button
+        class="cancel"
+        (click)="closeDialog()"
+    >Cancel</button>
+    <br>
+    <div class="row">
+        <div class="clients mx-auto">
+            <p>Clients</p>
+        </div>
+    </div>
+    <div class="row list-patient ">
+        <div
+            class="mx-auto"
+            *ngFor="let item of examSub"
+        >
+            <div class="row list-item">
+                <div class="col-10 align-self-center">
+                    {{item?.Name}}
+                </div>
+                <div class="col-2 align-self-center">
+                    <input
+                        type="checkbox"
+                        [checked]="item?.checked"
+                        (click)="onSelectItem(item)"
+                    >
+                </div>
+            </div>
+            <br>
+        </div>
+    </div>
+    <div class="btn-active">
+        <button
+            class="btn btn-success"
+            [mat-dialog-close]="data"
+            cdkFocusInitial
+        >Done</button>
+    </div>
+</div>

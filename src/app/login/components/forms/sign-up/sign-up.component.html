@@ -1,0 +1,86 @@
+<div class="background">
+    <img
+        src="assets/images/logo.png"
+        alt=""
+    >
+
+    <form
+        class="container"
+        ngNativeValidate
+        #createForm="ngForm"
+    >
+        <button
+            class="navigate-signin"
+            routerLink="/login"
+        >
+            <i class="material-icons">
+                arrow_drop_down
+            </i>
+        </button>
+
+        <div class="row">
+            <div class="col-10 mx-auto">
+                <div class="title">
+                    Sign up
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-10 mx-auto">
+                <div class="position">
+                    <select
+                        name=""
+                        id=""
+                    >
+                        <option value="">Position</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-10 mx-auto">
+                <input
+                    type="text"
+                    name="email"
+                    placeholder="Email"
+                    required
+                    [(ngModel)]="email"
+                >
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-10 mx-auto">
+                <input
+                    type="text"
+                    name="phone"
+                    placeholder="Phone"
+                >
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-10 mx-auto">
+                <input
+                    type="password"
+                    name="pwd"
+                    placeholder="Password"
+                    required
+                    [(ngModel)]="password"
+                >
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-10 mx-auto">
+                <button
+                    class="sign-in"
+                    (click)="registerAccount()"
+                >
+                    Sign up
+                </button>
+            </div>
+        </div>
+
+    </form>
+</div>

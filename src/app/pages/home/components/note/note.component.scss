@@ -1,0 +1,53 @@
+.header {
+  display: flex;
+  height: 25px; 
+  padding-left: 1rem; 
+  color: #808080;
+  margin-bottom: 1.5em;
+  span {
+    font-size: 2.2em;
+    margin-right: 0.5em;
+  }
+}
+
+.note {
+  height: auto;
+  .title {
+    height: 20px;
+    padding: 0 1rem;
+    h4 {
+      font-weight: bold;
+    }
+  }
+  .date {
+    height: 20px;
+    margin-left: -1rem;
+    color: #808080;
+  }
+  .content p{
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    color: #808080;
+    border-bottom: 1px solid; 
+    height: 25px;
+    margin-bottom: 0;
+  }
+
+}
+.note:hover{
+    cursor: pointer;
+    background-color: #CCCCCC;
+}
+.create-note{
+  margin: 20px; 
+  color: #808080;
+   img{
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    bottom: 1em;
+    right: 2rem
+   }
+ 
+}

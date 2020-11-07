@@ -1,0 +1,38 @@
+<div class="container-fluid mt-4">
+    <div class="row m-0">
+        <div class="profile__nav w-100 medication outsideShadow height-81vh">
+            <mat-tab-group
+                mat-stretch-tabs
+                (selectedTabChange)="onChangeTab($event)"
+                class="outsideShadow example-stretched-tabs mat-elevation-z4"
+            >
+                <mat-tab label="Current medication">
+                    <app-current-medication [dataSource]="listData.current"></app-current-medication>
+                </mat-tab>
+                <mat-tab label="Medication history">
+                    <app-medication-history [dataSource]="listData.history"></app-medication-history>
+                </mat-tab>
+                <mat-tab label="Medication by problems">
+                    <app-problems-medication [dataSource]="listData.problems"></app-problems-medication>
+                </mat-tab>
+            </mat-tab-group>
+        </div>
+    </div>
+    <div class="button-group-medication">
+        <button
+            class="btn pr-3 pl-3"
+            (click)="openDialog()"
+        >
+            <mat-icon class="fz35-c70">add_circle_outline</mat-icon>
+        </button>
+        <button
+            class="btn"
+            (click)="openEditDialog()"
+        >
+            <mat-icon class="fz35-c70">edit</mat-icon>
+        </button>
+        <button class="btn">
+            <mat-icon class="fz35-c70">print</mat-icon>
+        </button>
+    </div>
+</div>

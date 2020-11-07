@@ -1,0 +1,79 @@
+.container-fluid {
+    padding-top: 60px;
+    height: 75vh;
+    .kendoTableStyle input {
+        text-align: center;
+        width: 100% !important;
+    }
+}
+
+// .table-body{
+//     display: flex;
+//     th{
+//         padding: 0px !important;
+//         border-bottom: none !important; 
+//     }
+//     .kendoTableStyle{
+//         padding-left: 2vw;
+//         kendo-grid-column{
+//             display: flex;
+//             justify-content: space-between;
+//         }
+//         ::ng-deep .k-grid td:last-child{
+//             display: flex;
+//         }
+//     }
+// }
+.icon-div {
+    right: 2em;
+    position: absolute;
+    bottom: 1em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    // span {
+    //     margin: 0 10px;
+    // }
+}
+
+table {
+    width: 48%;
+}
+
+.save {
+    width: 80px;
+    height: 35px;
+    background-color: #9FB9C8;
+    border-radius: 18px;
+    color: white;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+button {
+    .material-icon {
+        font-size: 30px;
+    }
+}
+
+.group-button {
+    position: absolute;
+    right: 1em;
+    bottom: 0.5em;
+    button {
+        border: none;
+        outline: none;
+        background: none;
+        padding: 0 10px;
+        img {
+            width: 30px;
+            height: 30px;
+        }
+    }
+}
+
+.medical-table {
+    height: 60vh;
+    overflow: auto;
+    overflow-x: hidden;
+}

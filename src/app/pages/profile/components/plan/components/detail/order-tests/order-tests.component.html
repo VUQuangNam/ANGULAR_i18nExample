@@ -1,0 +1,52 @@
+<div class="container-fluid p-3">
+    <div class="listTestCategory" style="width: 20%; float: left;">
+        <ul class="ul-listTestCategory">
+            <li class="li-listTestCategory" *ngFor="let item of listTestCategory; let i = index" [class]="item.TestcategoryId === categoryId ? 'border-bottom-1': '' ">
+                <div class="listTestCategorySub" (click)="onActiveItem(item)"> 
+                    <mat-icon *ngIf="item.CheckOrderTest === true">done</mat-icon>{{item.Name}}</div>
+            </li>
+        </ul>
+    </div>
+    <div *ngIf="categoryId == 4" class="ml-3 listTestCategory scroll-55vh" style="width: 20%; float: left;">
+        <ul class="ul-listTestCategory">
+            <li class="li-listTestCategory" *ngFor="let item of listXbraySub; let i = index" [class]="item.TestcategoryId === xBraySub ? 'border-bottom-1': '' ">
+                <div class="listTestCategorySub" (click)="onActiveXbraySub(item)">
+                    <mat-icon *ngIf="item.CheckOrderTest === true">done</mat-icon> {{item.Name}}</div>
+            </li>
+        </ul>
+    </div>
+    <div *ngIf="listCategorySub.length" class="ml-3 listTestCategory scroll-55vh" style="width: 20%; float: left;">
+        <ul class="ul-listTestCategory">
+            <li class="li-listTestCategory" *ngFor="let item of listCategorySub; let i = index" [class]="item.TestcategoryId === testcategoryId ? 'border-bottom-1': '' ">
+                <div class="listTestCategorySub" (click)="listTestCategoryId(item.TestcategoryId)">
+                    <mat-icon *ngIf="item.CheckOrderTest === true">done</mat-icon>{{item.Name}}</div>
+            </li>
+            
+        </ul>
+    </div>
+
+    <div *ngIf="categoryId !== 1 " class="ml-3 listTestCategory scroll-55vh" style="width: 20%; float: left;">
+        <ul class="ul-listTestCategory">
+            <li class="li-listTestCategory" *ngFor="let item of listOrgans; let i = index" [class]="item.OrganId == organId ? 'border-bottom-1': '' ">
+                <div class="listTestCategorySub" (click)="onActiveOrgans(item)">
+                    <mat-icon *ngIf="item.CheckOrderTest === true">done</mat-icon> {{item.Name}}</div>
+            </li>
+        </ul>
+    </div>
+    <div class="listCategorySub scroll-55vh" [ngStyle]="{'width.%': categoryId == 1 || categoryId == 2 || categoryId == 3 ? '53' : '33' }">
+        <ul class="ul-listTestCategory">
+            <li class="li-listTestCategory row" *ngFor="let item of listTest; let i = index" [class]="item.isActive ? 'border-bottom-1': '' ">
+                <div [class]="(i % 2) === 0 ? 'bg-br col-10 text-align-center': ' col-10 text-align-center'">
+                    {{item.Name}}
+                </div>
+                <div [class]="(i % 2) === 0 ? 'bg-br col-2 text-align-center': 'col-2 text-align-center'" (click)="onActiveCatSub(item, i)">
+                    <mat-icon [style.opacity]="item.checkActive === true ? '0.3' : '1' ">touch_app</mat-icon>
+                </div>
+            </li>
+        </ul>
+    </div>          
+</div>
+<div class="button-group">
+        <mat-icon (click)="orderTestAll()" [style.opacity]="checkOrderAll === true ? '0.3' : '1' ">touch_app</mat-icon>
+        <mat-icon >print</mat-icon>
+</div>

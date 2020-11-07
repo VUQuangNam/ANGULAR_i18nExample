@@ -1,0 +1,11 @@
+  .example-stretched-tabs {
+    width: 100%;
+    border-radius: 15px;
+  }
+  ::ng-deep .history{
+    .mat-tab-labels{
+        background-color: #ffffff;
+        border-radius: 15px;
+        height: 50px;
+    }
+  }

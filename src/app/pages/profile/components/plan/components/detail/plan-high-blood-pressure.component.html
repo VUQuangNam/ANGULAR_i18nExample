@@ -1,0 +1,18 @@
+<div class="insideShadow w-100 mt-3">
+  <div class="row profile__nav m-0 plan">
+    <mat-tab-group mat-stretch-tabs class="col p-0" style="height: 72vh">
+      <mat-tab label="Order Tests">
+        <app-order-tests [data]="data"></app-order-tests>
+      </mat-tab>
+      <mat-tab label="Health Education">
+        <app-health-education [data]="data"></app-health-education>
+      </mat-tab>
+      <mat-tab label="Prescription">
+        <app-prescription [data]="data"></app-prescription>
+      </mat-tab>
+      <mat-tab label="Follow up">
+        <app-follow-up [data]="data"></app-follow-up>
+      </mat-tab>
+    </mat-tab-group>
+  </div>
+</div>

@@ -1,0 +1,85 @@
+
+// start note style
+.note {
+    height: auto;
+    .title {
+      height: 20px;
+      padding: 0 1rem;
+      h4 {
+        font-weight: bold;
+      }
+    }
+    .date {
+      height: 20px;
+      margin-left: -1rem;
+      color: #808080;
+    }
+    .content p{
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      overflow: hidden;
+      color: #808080;
+      border-bottom: 1px solid; 
+      height: 25px;
+      margin-bottom: 0;
+    }
+  
+  }
+  .note:hover{
+      cursor: pointer;
+      background-color: #CCCCCC;
+  }
+  .create-note{
+    margin: 20px; 
+    color: #808080;
+     img{
+      width: 30px;
+      height: 30px;
+      position: absolute;
+      bottom: 1em;
+      right: 2rem
+     }
+     img:hover{
+       cursor: pointer;
+     }
+  }
+.note-container {
+  padding: .8em;
+  position: absolute;
+  top: -5em;
+  width: 90%;
+  .note-body {
+    height: 9em;
+    overflow: auto;
+    
+  }
+  .note-title {
+  display: flex;
+  justify-content: space-between;
+  .note-left {
+    font-weight: 600;
+  }
+  .note-time {
+    font-size: .8em;
+  }
+  
+}
+.note-footer {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 1.2em;
+    position: relative;
+    img {
+      position: absolute;
+      left: 14em;
+      bottom: 0.2em;
+    }
+  }
+}
+
+
+//end note style
+
+
+  

@@ -1,0 +1,102 @@
+<div class="container" style="margin-top: 2em">
+  <div class="row">
+    <div class="col-9 add-history">Details medical history</div>
+    <div class="col-3 btn-1">
+      <div class="button-group">
+        <button
+          class="btn-cancel"
+          style="border: none; color: #9fb9c8"
+          (click)="closeDialog()"
+        >
+          Cancel
+        </button>
+        <button class="btn-save" (click)="updateItem()">Save</button>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="container">
+  <div class="row">
+    <div class="col-2 title">Type:</div>
+    <div class="col-10">
+      <div class="control">
+        <label class="radio">
+          <input
+            type="radio"
+            [checked]="type == 1"
+            (click)="selectType(1)"
+            name="answer"
+          />
+          Medical history
+        </label>
+        <label class="radio">
+          <input
+            type="radio"
+            [checked]="type == 2"
+            (click)="selectType(2)"
+            name="answer"
+          />
+          Surgical history
+        </label>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-2 title" style="margin-top: 20px">Name:</div>
+    <div class="col-10">
+      <!-- <mat-form-field class="example-full-width">
+                <mat-label></mat-label>
+                <input matInput [(ngModel)]="name" value="" />
+            </mat-form-field> -->
+      <mat-form-field class="example-full-width">
+        <input
+          type="text"
+          matInput
+          name="problem"
+          [(ngModel)]="name"
+          (keyup)="searchName(name, type)"
+          required
+        />
+      </mat-form-field>
+      <mat-selection-list
+        *ngIf="type === 1"
+        class="example-full-width"
+        [multiple]="false"
+      >
+        <mat-list-option
+          *ngFor="let item of medicalList"
+          [value]="item.SNOMEDCode"
+          (click)="
+            setTermMedical(item.FullName, item.SymptomId, item.SNOMEDCode)
+          "
+        >
+          {{ item.FullName }}
+        </mat-list-option>
+      </mat-selection-list>
+      <mat-selection-list
+        *ngIf="type === 2"
+        class="example-full-width"
+        [multiple]="false"
+      >
+        <mat-list-option
+          *ngFor="let item of surgicalList"
+          [value]="item.SNOMEDCode"
+          (click)="
+            setTermSurgical(item.FullName, item.SymptomId, item.SNOMEDCode)
+          "
+        >
+          {{ item.FullName }}
+        </mat-list-option>
+      </mat-selection-list>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-2 title" style="margin-top: 20px">Since</div>
+    <div class="col-10">
+      <mat-form-field class="example-full-width">
+        <mat-label></mat-label>
+        <input matInput type="date" [(ngModel)]="since" value="" />
+      </mat-form-field>
+    </div>
+  </div>
+</div>

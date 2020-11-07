@@ -1,0 +1,86 @@
+<div class="demographics mt-4">
+    <div class="avatar">
+        <img src="{{profileImageString}}" alt="" width="200px" height="300px" />
+    </div>
+    <div class="info">
+        <div class="row">
+            <div class="col-6">
+                <div class="form-group">
+                    <label> Firstname </label>
+                    <input name="Firstname" [(ngModel)]="firstName" [disabled]="!isShow" />
+                </div>
+                <div class="form-group">
+                    <label> Lastname </label>
+                    <input name="name" [(ngModel)]="lastName" [disabled]="!isShow" />
+                </div>
+                <div class="form-group">
+                    <label> Phone </label>
+                    <input name="phone" [(ngModel)]="phone" [disabled]="!isShow" />
+                </div>
+                <div class="form-group">
+                    <label> Email </label>
+                    <input name="email" [(ngModel)]="email" [disabled]="!isShow" />
+                </div>
+                <div class="form-group">
+                    <label> Address </label>
+                    <textarea style="margin-top: 8px;" name="" id="" [(ngModel)]="address" [disabled]="!isShow"></textarea>
+                </div>
+            </div>
+            <div class="col-6">
+                <div class="form-group">
+                    <label> Gender </label>
+                    <select name="" id="" [(ngModel)]="gender" [disabled]="!isShow" class="gender">
+            <option value="1">Male</option>
+            <option value="2">Female</option>
+          </select>
+                </div>
+                <div class="form-group">
+                    <label> Date of birth </label>
+                    <input type="date" name="dob" [(ngModel)]="dob" [disabled]="!isShow" />
+                </div>
+                <div class="form-group">
+                    <label> National ID </label>
+                    <input name="national" [(ngModel)]="nationalId" [disabled]="!isShow" />
+                </div>
+            </div>
+        </div>
+        <hr style="width: 100%;" />
+        <h4>Emergency contact</h4>
+        <div class="row">
+            <div class="col-6">
+                <div class="form-group">
+                    <label> Firstname </label>
+                    <input name="name" [disabled]="!isShow" [(ngModel)]="relationshipFirstName"/>
+                </div>
+                <div class="form-group">
+                    <label> Lastname </label>
+                    <input name="name" [disabled]="!isShow" [(ngModel)]="relationshipLastName" />
+                </div>
+            </div>
+            <div class="col-6">
+                <div class="form-group">
+                    <label> Relationship </label>
+                    <input name="relationship" [disabled]="!isShow" [(ngModel)]="relationship" />
+                </div>
+                <div class="form-group">
+                    <label> Phone </label>
+                    <input name="phone" [(ngModel)]="emergencyPhone" [disabled]="!isShow" />
+                </div>
+            </div>
+        </div>
+        <div class="row justify-content-end button-group">
+            <button class="btn" (click)="openEditDialog()">
+        <mat-icon style="font-size: 35px; color: #707070;">edit</mat-icon>
+      </button>
+            <button class="btn">
+        <mat-icon style="font-size: 35px; color: #707070;">print</mat-icon>
+      </button>
+        </div>
+        <div class="row justify-content-end cancel-save" [hidden]="!isShow">
+            <button (click)="showEdit()" class="btn" style="border: none; background: none; width: 100px; color: #9fb9c8;">
+        Cancel
+      </button>
+            <button class="btn save" (click)="updateCurrentPatient()">Save</button>
+        </div>
+    </div>
+</div>

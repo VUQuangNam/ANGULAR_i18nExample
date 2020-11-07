@@ -1,0 +1,154 @@
+<div class="container-fluid header" >
+    <div class="row mt-4">
+        <div class="col-2">Overall</div>
+        <div class="col-4"></div>
+        <div class="col-6">
+            <ngb-rating *ngFor="let overall of listOverall" class="rating-1" [(rate)]="currentRate0" [max]="6">
+                <ng-template let-fill="fill" let-index="index">
+                    <span class="rectangle" (click)="updateSymptom(overall.VisitSymptomId, overall.ProblemId, overall.SymptomId, overall.SymptomGroupType, index+2)" [class.filled]="fill === 100" [class.bad]="index < 1" [class.worse]="index ===1" [class.same]="index===2"
+                        [class.moresame]="index===3" [class.better]="index == 4" [class.gone]="index == 5">&#9644;</span>
+                </ng-template>
+            </ngb-rating>
+        </div>
+    </div>
+    <hr>
+    <div class="row">
+        <div class="col-2">Old symptoms</div>
+        <div class="col-4">
+            <div class="old-symptons">
+                <p *ngFor="let oldSymptom of listOldSymptom">{{oldSymptom.SymptomName}}</p>
+            </div>
+        </div>
+        <div class="col-6">
+            <ngb-rating *ngFor="let oldSymptom of listOldSymptom" class="rating-1" [(rate)]="oldSymptom.Code" [max]="6" style="padding: 0;margin-top: 10px;">
+                <ng-template let-fill="fill" let-index="index">
+                    <span class="rectangle" (click)="updateSymptom(oldSymptom.VisitSymptomId, oldSymptom.ProblemId, oldSymptom.SymptomId, oldSymptom.SymptomGroupType, index+2)" [class.filled]="fill === 100" [class.bad]="index < 1" [class.worse]="index ===1" [class.same]="index===2"
+                        [class.moresame]="index===3" [class.better]="index===4" [class.gone]="index===5">&#9644;</span>
+                </ng-template>
+                <p></p>
+            </ngb-rating>
+        </div>
+    </div>
+    <hr>
+    <div class="row new-symptons">
+        <div class="col-2">New symptoms</div>
+        <div class="col-4">
+            <p *ngFor="let newSymptom of listNewSymptom">{{newSymptom.SymptomName}}</p>
+        </div>
+        <div class="col-6">
+            <div class="row" *ngFor="let newSymptom of listNewSymptom">
+                <div class="col-1,5 yes-no">
+                    <div class="btn">
+                        <input [checked]="newSymptom.ResultCode == 0" id="{{newSymptom.SymptomId}}-no" type="radio" />
+                        <label (click)="updateSymptom(newSymptom.VisitSymptomId, newSymptom.ProblemId, newSymptom.SymptomId, newSymptom.SymptomGroupType, 0)" for="{{newSymptom.SymptomId}}-no">
+                            <p>No</p>
+                        </label>
+                        <input [checked]="newSymptom.ResultCode == 1" id="{{newSymptom.SymptomId}}-yes" type="radio" />
+                        <label (click)="updateSymptom(newSymptom.VisitSymptomId, newSymptom.ProblemId, newSymptom.SymptomId, newSymptom.SymptomGroupType, 1)" for="{{newSymptom.SymptomId}}-yes">
+                            <p>Yes</p>
+                        </label>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="create">
+            <img (click)="openEditDialog(3)" src="assets/svg/pen.svg" alt="">
+            <img (click)="openDialog(3)" src="assets/svg/create.svg" alt=""></div>
+    </div>
+    <hr>
+    <div class="row new-symptons">
+        <div class="col-2">Review of systems</div>
+        <div class="col-4">
+            <p *ngFor="let review of listReview">{{review.SymptomName}}</p>
+        </div>
+        <div class="col-6">
+            <div class="row" *ngFor="let review of listReview">
+                <div class="col-1,5 yes-no" >
+                    <div class="btn">
+                        <input [checked]="review.ResultCode == 0" id="{{review.SymptomId}}-no" type="radio" />
+                        <label (click)="updateSymptom(review.VisitSymptomId, review.ProblemId, review.SymptomId, review.SymptomGroupType, 0)" for="{{review.SymptomId}}-no">
+                            <p>No</p>
+                        </label>
+                        <input [checked]="review.ResultCode == 1" id="{{review.SymptomId}}-yes" type="radio" />
+                        <label (click)="updateSymptom(review.VisitSymptomId, review.ProblemId, review.SymptomId, review.SymptomGroupType, 1)" for="{{review.SymptomId}}-yes ">
+                            <p>Yes</p>
+                        </label>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <div class="create ">
+            <img (click)="openEditDialog(4)" src="assets/svg/pen.svg" alt="">
+            <img (click)="openDialog(4) " src="assets/svg/create.svg " alt=" ">
+
+        </div>
+    </div>
+    <hr>
+    <div class="row new-symptons ">
+        <div class="col-2 ">Daily life</div>
+        <div class="col-4 ">
+            <p *ngFor="let daily of listDaily ">{{daily.SymptomName}}</p>
+        </div>
+        <div class="col-6 ">
+            <div class="row " *ngFor="let daily of listDaily ">
+                <div class="col-1,5 yes-no">
+                    <div class="btn ">
+                        <input [checked]="daily.ResultCode == 0 " id="{{daily.SymptomId}}-no " type="radio" />
+                        <label (click)="updateSymptom(daily.VisitSymptomId, daily.ProblemId, daily.SymptomId, daily.SymptomGroupType, 0)" for="{{daily.SymptomId}}-no ">
+                            <p>No</p>
+                        </label>
+                        <input [checked]="daily.ResultCode == 1 " id="{{daily.SymptomId}}-yes " type="radio" />
+                        <label (click)="updateSymptom(daily.VisitSymptomId, daily.ProblemId, daily.SymptomId, daily.SymptomGroupType, 1)" for="{{daily.SymptomId}}-yes ">
+                            <p>Yes</p>
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <div class="create ">
+                <img (click)="openEditDialog(5)" src="assets/svg/pen.svg" alt="">
+                <img (click)="openDialog(5) " src="assets/svg/create.svg " alt=" "></div>
+        </div>
+    </div>
+    <hr>
+    <div class="row new-symptons mb-3 ">
+        <div class="col-2 ">Medication</div>
+        <div class="col-3 pr-0">
+            <p>Your current Medication</p>
+            <p *ngFor="let medication of drugName ">{{medication.DrugName}}</p>
+        </div>
+        <div class="col-3 p-0">
+            <p style="margin: 0px 50px; ">Take it?</p>
+            <div class="medication " *ngFor="let medication of drugName ">
+
+                <input [checked]="medication.ResultCode == 0 " id="{{medication.SymptomId}}-no " type="radio" />
+                <label (click)="updateSymptom(medication.VisitSymptomId, medication.ProblemId, medication.SymptomId, medication.SymptomGroupType, 0)" for="{{medication.SymptomId}}-no ">
+                    <p>No</p>
+                </label>
+                <input [checked]="medication.ResultCode == 1 " id="{{medication.SymptomId}}-yes " type="radio" />
+                <label (click)="updateSymptom(medication.VisitSymptomId, medication.ProblemId, medication.SymptomId, medication.SymptomGroupType, 1)" for="{{medication.SymptomId}}-yes ">
+                    <p>Yes</p>
+                </label>
+            </div>
+        </div>
+        <div class="col-3 p-0 ">
+            <p class="tolerated">Tolerated?</p>
+            <div [hidden]="medication.ResultCode == 0" class="medication" *ngFor="let medication of listMedication ">
+                <input [checked]="checkFocus == false" id="no " type="radio" />
+                <label (click)="clickNo()" for="no">
+                    <p>No</p>
+                </label>
+                <input [checked]="checkFocus == true" id="yes" type="radio" />
+                <label (click)="clickYes()" for="yes">
+                    <p>Yes</p>
+                </label>
+                <!-- <div>
+                    <mat-icon (click)="deleteSymptom(medication.VisitSymptomId)">delete</mat-icon>
+                </div> -->
+            </div>
+
+        </div>
+       
+
+    </div>
+</div>

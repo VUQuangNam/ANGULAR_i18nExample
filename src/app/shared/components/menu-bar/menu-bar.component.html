@@ -1,0 +1,108 @@
+<div [hidden]="hideMenu">
+    <!-- Menu home -->
+    <div id="mySidenav" class="sidenav insideShadow" [style.text-align]="'center'" *ngIf="!isShow"
+        [hidden]="isShowMenu">
+        <div class="avatar" [style.box-shadow]="'none'" style="margin-top: -10px;">
+            <img src="assets/svg/logo.svg" alt="">
+        </div>
+        <br><br>
+        <a name="Home" (click)="openNav()" routerLink="/pages/home" routerLinkActive="sideBarActive">
+            <img id="home" src="assets/svg/home.svg" alt="">
+            <p>Home</p>
+        </a>
+        <a name="Clients" (click)="closeNav()" routerLink="/pages/clients" routerLinkActive="sideBarActive">
+            <img id="client" src="assets/svg/client.svg" alt="">
+            <p>Clients</p>
+        </a>
+        <a name="Calendar" (click)="closeNav()" routerLink="/pages/calendar" routerLinkActive="sideBarActive">
+            <img id="calendar" src="assets/svg/calendar.svg" alt="">
+            <p>Calendar</p>
+        </a>
+        <a name="Notifications" (click)="closeNav()" routerLink="/pages/notifications" routerLinkActive="sideBarActive">
+            <img id="noti" src="assets/svg/noti.svg" alt="">
+            <p>Noti</p>
+        </a>
+        <a name="Messages" (click)="closeNav()" routerLink="/pages/message" routerLinkActive="sideBarActive">
+            <img id="chat" src="assets/svg/chat.svg" alt="">
+            <p>Messages</p>
+        </a>
+        <!-- <a name="Packages" (click)="closeNav()" routerLink="/pages/package" routerLinkActive="sideBarActive">
+            <img id="package" src="assets/svg/package.svg" alt="">
+            <p>Packages</p>
+        </a> -->
+    </div>
+
+    <div id="mySidenavLargeMenu" class="sidenav insideShadow" [style.text-align]="'left'" *ngIf="!isShow"
+        [hidden]="!isShowMenu">
+        <div class="avatarLargeMenu mx-auto text-center" [style.box-shadow]="'4px 3px 10px 0px #4c4c4c'"
+            style="margin-top: -10px;">
+            <img src="assets/svg/logo.svg" alt="">
+            <b class="mt-2">Hibiscus Clinic</b>
+        </div>
+        <br><br>
+        <a name="Home" (click)="openNav()" routerLink="/pages/home" routerLinkActive="sideBarActive">
+            <img id="home" src="assets/svg/home.svg" alt="">
+            <span>Home</span>
+        </a>
+        <a name="Clients" (click)="closeNav()" routerLink="/pages/clients" routerLinkActive="sideBarActive">
+            <img id="client" src="assets/svg/client.svg" alt="">
+            <span>Clients</span>
+        </a>
+        <a name="Calendar" (click)="closeNav()" routerLink="/pages/calendar" routerLinkActive="sideBarActive">
+            <img id="calendar" src="assets/svg/calendar.svg" alt="">
+            <span>Calendar</span>
+
+        </a>
+        <a name="Notifications" (click)="closeNav()" routerLink="/pages/notifications" routerLinkActive="sideBarActive">
+            <img id="noti" src="assets/svg/noti.svg" alt="">
+            <span>Notifications</span>
+
+        </a>
+        <a name="Messages" (click)="closeNav()" routerLink="/pages/message" routerLinkActive="sideBarActive">
+            <img id="chat" src="assets/svg/chat.svg" alt="">
+            <span>Messages</span>
+        </a>
+        <!-- <a name="Packages" (click)="closeNav()" routerLink="/pages/package" routerLinkActive="sideBarActive">
+            <img id="package" src="assets/svg/package.svg" alt="">
+            <span>Packages</span>
+        </a> -->
+    </div>
+
+
+    <!-- Menu patients -->
+    <div [hidden]="!isShow" class="text-center" style="width: 100px; height: 100px; background-color: #9FB9C8; margin-left: 13px; border-bottom-right-radius: 24px;
+  border-bottom-left-radius: 24px;">
+        <img src="assets/svg/logo.svg" style="margin-top: 27px;" width="57" height="57" alt="">
+    </div>
+    <div class="outsideShadow mx-auto" style="width: 30px; height: 30px; margin: 10px;" [hidden]="!isShow">
+        <mat-icon style="font-size: 30px; color: #4C7288;" (click)="showMenu()">keyboard_arrow_down</mat-icon>
+    </div>
+    <div id="tabs-vertical" class="tab-item insideShadow" [hidden]="!isShow">
+        <div class="avatar mx-auto text-center" style="margin-top: -10px;">
+        </div>
+        <a name="History" routerLink="/pages/profile/detail/{{patientId}}/history" routerLinkActive="sideBarActive">
+            <img id="history" src="assets/svg/history.png" alt="">
+            <p>History</p>
+        </a>
+        <a name="Exam" routerLink="/pages/profile/detail/{{patientId}}/exam" routerLinkActive="sideBarActive">
+            <img id="exam" src="assets/svg/exam.svg" alt="">
+            <p>Exam</p>
+        </a>
+        <a name="Diagnosis" routerLink="/pages/profile/detail/{{patientId}}/diagnosis" routerLinkActive="sideBarActive">
+            <img id="diagnosis" src="assets/svg/Diagnosis.svg" alt="">
+            <p>Diagnosis</p>
+        </a>
+        <a name="Plan" routerLink="/pages/profile/detail/{{patientId}}/plan" routerLinkActive="sideBarActive">
+            <img id="plan" src="assets/svg/plan.svg" alt="">
+            <p>Plan</p>
+        </a>
+        <a name="Report" routerLink="/pages/profile/detail/{{patientId}}/report" routerLinkActive="sideBarActive">
+            <img id="report" src="assets/svg/report.svg" alt="">
+            <p>Report</p>
+        </a>
+        <a name="Invoice" routerLink="/pages/profile/detail/{{patientId}}/invoice" routerLinkActive="sideBarActive">
+            <img id="invoice" src="assets/svg/invoice.svg" alt="">
+            <p>Invoice</p>
+        </a>
+    </div>
+</div>

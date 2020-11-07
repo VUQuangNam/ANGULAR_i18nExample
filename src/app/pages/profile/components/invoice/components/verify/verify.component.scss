@@ -1,0 +1,57 @@
+.create{
+    float: right;
+    position: relative;
+    top: 10px;
+   button:nth-child(2){
+        background-color: #9fb9c8;
+        width: 110px;
+        height: 40px;
+        border-radius: 20px;
+        border: none;
+        font-size: 20px;
+        color: white;
+    }   
+}
+p{
+    margin: 0;
+}
+h2 {
+    margin: 0px 15px 10px;
+    padding-top: 5px;
+    color: black;
+    
+}
+  .add-button{
+    border: none;
+    background-color: #f6f6f6;
+    position: relative;
+    bottom: 50px;
+    float: right;
+    top: 2px;
+}
+.verify{
+    float: right;
+    position: relative;
+    right: -3rem;
+    top: 10px;
+    button{
+        background-color: #9fb9c8;
+        width: 110px;
+        height: 40px;
+        border-radius: 20px;
+        border: none;
+        font-size: 20px;
+        color: white;
+    }   
+}
+.subtotal, .discount, .total{
+    width: 235px;
+    height: 30px;
+    background-color: white;
+    border-radius: 20px;
+    line-height: 30px;
+    float: right;
+    margin-right: 0;
+    margin-bottom: 1rem;
+
+}

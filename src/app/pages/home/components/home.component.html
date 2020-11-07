@@ -1,0 +1,52 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-8">
+      <app-recent-clients></app-recent-clients>
+    </div>
+    <div class="col-4">
+      <app-user></app-user>
+    </div>
+  </div>
+  <br />
+  <div class="row">
+    <div class="col-8">
+      <app-open-clients></app-open-clients>
+    </div>
+    <div class="col-4">
+      <div class="note-container insideShadow">
+        <div class="note-header">
+          Note
+        </div>
+        <div class="note-body">
+          <div class="note-item" *ngFor="let note of notes" routerLink="/pages/home/note/{{ note.NoteId }}">
+            <div class="note-title">
+              <div class="note-left">
+                {{ note.Title }}
+              </div>
+              <span class="note-time">
+                {{ note.NoteDate | date: "dd/MM/yyyy" }}
+              </span>
+            </div>
+            <div class="note-preview">
+              {{ note.Content }}
+            </div>
+            <hr>
+          </div>
+        </div>
+        <div class="note-footer">
+          <span (click)="showAllNote()">{{ count }} notes</span>
+          <img class="float-right" (click)="createNote()" src="assets/svg/Group 1911.svg" alt="" />
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+  <div class="row mt-5">
+    <div class="col">
+
+      <app-timeline></app-timeline>
+      <img style="width: 100%" src="assets/svg/contact.svg" alt="" />
+    </div>
+  </div>
+</div>

@@ -1,0 +1,54 @@
+<form class="container">
+    <div class="row">
+        <div class="col-5 mx-auto">
+            <div class="title">
+                Sign in <br> <br>
+                your account
+            </div>
+        </div>
+    </div>
+   
+    <div class="row">
+        <div class="col-5 mx-auto">
+            <div class="position">
+               <select name="" id="">
+                   <option value="">Position</option>
+               </select>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-5 mx-auto">
+            <input type="text" name="userName" placeholder="Username" [(ngModel)]="userName">
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-5 mx-auto">
+            <input type="password" name="pwd" placeholder="Password" [(ngModel)]="pwd">
+            <p *ngIf="error">Sai tên đăng nhập hoặc mật khẩu. Hãy thử lại</p>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-5 mx-auto d-flex justify-content-between">
+            <mat-checkbox>Remember me</mat-checkbox>
+            <a routerLink="forgot-password">Forgot password?</a>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-5 mx-auto">
+            <button class="sign-in" (click)="login()">
+                Sign in
+            </button>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-5 mx-auto text-center">
+            Don't have an account? <u routerLink="sign-up">Sign up</u>
+        </div>
+    </div>
+
+
+</form>

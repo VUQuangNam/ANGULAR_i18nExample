@@ -1,0 +1,288 @@
+<div class="container" style="margin-top: 2em">
+  <div class="row">
+    <div class="col-9 add-history">Add family history</div>
+    <div class="col-3 btn-1">
+      <div class="button-group">
+        <button
+          class="btn-cancel"
+          style="border: none; color: #9fb9c8"
+          (click)="closeDialog()"
+        >
+          Cancel
+        </button>
+        <button class="btn-save" (click)="createFamilyHistory()">Save</button>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="scroll-dialog">
+  <div class="container">
+    <div class="row align-items-center">
+      <div class="col-5 question">
+        Did anyone in the family have <span>Heart attack</span>?
+      </div>
+      <div class="btn">
+        <input
+          id="heart-no"
+          [checked]="heartAttack == 0"
+          (click)="selectType(0)"
+          type="radio"
+        />
+        <label for="heart-no" class="">
+          <p>No</p>
+        </label>
+        <input
+          [checked]="heartAttack == 1"
+          (click)="selectType(1)"
+          id="heart-yes"
+          type="radio"
+        />
+        <label for="heart-yes" class="">
+          <p>Yes</p>
+        </label>
+      </div>
+    </div>
+  </div>
+  <div [hidden]="!heartAttack" class="container mb-5 hidden">
+    <div class="row align-items-start">
+      <div class="col-5 question">Who in your family had it?</div>
+      <div class="col-7 family">
+        <div *ngFor="let item of listRelationShip; let index = index">
+          <input
+            id="{{ item.idRelationShip }}-heartAttack"
+            type="checkbox"
+            (click)="
+              listheartAttack(item.idRelationShip, $event.target.checked)
+            "
+          />
+          <label
+            for="{{ item.idRelationShip }}-heartAttack"
+            class="family-people"
+          >
+            <p>{{ item.Name }}</p>
+          </label>
+        </div>
+      </div>
+    </div>
+  </div>
+  <hr style="width: 90%; background-color: #707070" />
+  <div class="container">
+    <div class="row">
+      <div class="col-5 question">
+        Did anyone in the family have <span>Stroke</span>?
+      </div>
+      <div class="btn">
+        <input
+          [checked]="stroke == 0"
+          (click)="clickStroke(0)"
+          id="stroke-no "
+          type="radio"
+        />
+        <label for="stroke-no " class=" ">
+          <p>No</p>
+        </label>
+        <input
+          [checked]="stroke == 1"
+          id="stroke-yes "
+          (click)="clickStroke(1)"
+          type="radio"
+        />
+        <label for="stroke-yes " class=" ">
+          <p>Yes</p>
+        </label>
+      </div>
+    </div>
+  </div>
+  <div [hidden]="!stroke" class="container mb-5 hidden">
+    <div class="row align-items-start">
+      <div class="col-5 question">Who in your family had it?</div>
+      <div class="col-7 family">
+        <div *ngFor="let item of listRelationShip; let index = index">
+          <input
+            id="{{ item.idRelationShip }}-stroke"
+            type="checkbox"
+            (click)="listStroke(item.idRelationShip, $event.target.checked)"
+          />
+          <label for="{{ item.idRelationShip }}-stroke" class="family-people">
+            <p>{{ item.Name }}</p>
+          </label>
+        </div>
+      </div>
+    </div>
+  </div>
+  <hr style="width: 90%; background-color: #707070" />
+  <div class="container">
+    <div class="row">
+      <div class="col-5 question">
+        Did anyone in the family have <span>Dementia</span>?
+      </div>
+      <div class="btn">
+        <input
+          id="Dementia-no "
+          [checked]="dementia == 0"
+          (click)="clickDementia(0)"
+          type="radio"
+        />
+        <label for="Dementia-no " class=" ">
+          <p>No</p>
+        </label>
+        <input
+          id="Dementia-yes "
+          [checked]="dementia == 1"
+          (click)="clickDementia(1)"
+          type="radio"
+        />
+        <label for="Dementia-yes " class=" ">
+          <p>Yes</p>
+        </label>
+      </div>
+    </div>
+  </div>
+  <div [hidden]="!dementia" class="container mb-5 hidden">
+    <div class="row align-items-start">
+      <div class="col-5 question">Who in your family had it?</div>
+      <div class="col-7 family">
+        <div *ngFor="let item of listRelationShip; let index = index">
+          <input
+            id="{{ item.idRelationShip }}-dementia"
+            type="checkbox"
+            (click)="listDementia(item.idRelationShip, $event.target.checked)"
+          />
+          <label for="{{ item.idRelationShip }}-dementia" class="family-people">
+            <p>{{ item.Name }}</p>
+          </label>
+        </div>
+      </div>
+    </div>
+  </div>
+  <hr style="width: 90%; background-color: #707070" />
+  <div class="container">
+    <div class="row">
+      <div class="col-5 question">
+        Did anyone in the family have <span>Diabetes</span>?
+      </div>
+      <div class="btn">
+        <input
+          id="Diabetes-no "
+          [checked]="diabetes == 0"
+          (click)="clickDiabetes(0)"
+          type="radio"
+        />
+        <label for="Diabetes-no " class=" ">
+          <p>No</p>
+        </label>
+        <input id="Diabetes-yes " [checked]="diabetes == 1" type="radio" />
+        <label for="Diabetes-yes " (click)="clickDiabetes(1)" class=" ">
+          <p>Yes</p>
+        </label>
+      </div>
+    </div>
+  </div>
+  <div [hidden]="!diabetes" class="container mb-5 hidden">
+    <div class="row align-items-start">
+      <div class="col-5 question">Who in your family had it?</div>
+      <div class="col-7 family">
+        <div *ngFor="let item of listRelationShip; let index = index">
+          <input
+            id="{{ item.idRelationShip }}-diabetes"
+            type="checkbox"
+            (click)="listDiabetes(item.idRelationShip, $event.target.checked)"
+          />
+          <label for="{{ item.idRelationShip }}-diabetes" class="family-people">
+            <p>{{ item.Name }}</p>
+          </label>
+        </div>
+      </div>
+    </div>
+  </div>
+  <hr style="width: 90%; background-color: #707070" />
+  <div class="container">
+    <div class="row">
+      <div class="col-5 question">
+        Did anyone in the family have <span>High blood pressure</span>?
+      </div>
+      <div class="btn">
+        <input
+          id="blood-no "
+          type="radio"
+          [checked]="blood == 0"
+          (click)="clickBlood(0)"
+        />
+        <label for="blood-no " class=" ">
+          <p>No</p>
+        </label>
+        <input
+          id="blood-yes "
+          [checked]="blood == 1"
+          type="radio"
+          (click)="clickBlood(1)"
+        />
+        <label for="blood-yes " class=" ">
+          <p>Yes</p>
+        </label>
+      </div>
+    </div>
+  </div>
+  <div [hidden]="!blood" class="container mb-5 hidden">
+    <div class="row align-items-start">
+      <div class="col-5 question">Who in your family had it?</div>
+      <div class="col-7 family">
+        <div *ngFor="let item of listRelationShip; let index = index">
+          <input
+            id="{{ item.idRelationShip }}-blood"
+            type="checkbox"
+            (click)="listHighBlood(item.idRelationShip, $event.target.checked)"
+          />
+          <label for="{{ item.idRelationShip }}-blood" class="family-people">
+            <p>{{ item.Name }}</p>
+          </label>
+        </div>
+      </div>
+    </div>
+  </div>
+  <hr style="width: 90%; background-color: #707070" />
+  <div class="container">
+    <div class="row">
+      <div class="col-5 question">
+        Did anyone in the family have <span>Cancer</span>?
+      </div>
+      <div class="btn">
+        <input
+          id="cancer-no "
+          type="radio"
+          [checked]="cancer == 0"
+          (click)="clickCancer(0)"
+        />
+        <label for="cancer-no " class=" ">
+          <p>No</p>
+        </label>
+        <input
+          id="cancer-yes "
+          type="radio"
+          [checked]="cancer == 1"
+          (click)="clickCancer(1)"
+        />
+        <label for="cancer-yes " class=" ">
+          <p>Yes</p>
+        </label>
+      </div>
+    </div>
+  </div>
+  <div [hidden]="!cancer" class="container mb-5 hidden">
+    <div class="row align-items-start">
+      <div class="col-5 question">Who in your family had it?</div>
+      <div class="col-7 family">
+        <div *ngFor="let item of listRelationShip; let index = index">
+          <input
+            id="{{ item.idRelationShip }}-cancer"
+            type="checkbox"
+            (click)="listCancer(item.idRelationShip, $event.target.checked)"
+          />
+          <label for="{{ item.idRelationShip }}-cancer" class="family-people">
+            <p>{{ item.Name }}</p>
+          </label>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,54 @@
+h3 {
+    margin: 0px 10px 10px;
+    padding-top: 5px;
+    display: inline-block;
+    color: #808080;
+}
+h3:nth-child(2) {
+    float: right;
+}
+h3:nth-child(2):hover {
+    cursor: pointer;
+    text-decoration: underline;
+}
+.image {
+    display: inline-block;
+    width: 75px;
+    height: 75px;
+    border: none;
+    box-shadow: 4px 3px 10px 0px #acabab;
+    border-radius: 20px;
+    margin-right: 1rem;
+    margin-bottom: 1rem;
+    img {
+        width: 75px;
+        height: 75px;
+        border-radius: 20px;
+    }
+}
+.header{
+    height: 10em;
+  }
+  .list-patient{
+    margin: 0px 20px 16px; 
+    width: 500px; 
+    height: 80px;
+    .detail{
+      overflow: hidden; 
+      height: 80px;
+    }
+  }
+.notification {
+    width: 25px;
+    height: 25px;
+    background-color: #cc0000;
+    border-radius: 50%;
+    position: absolute;
+    top: -8px;
+    margin: 0px 60px;
+    .noti{
+        color: white; 
+        font-weight: bold; 
+        margin: 3px;
+      }
+}

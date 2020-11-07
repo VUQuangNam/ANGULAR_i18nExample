@@ -1,0 +1,141 @@
+.title1 {
+    
+    width: 227px;
+}
+.title2 {
+    
+    width: 659px;
+}
+label {
+    font-weight: bold;
+    background-color: #f0f0f0;
+    text-align: center;
+    border-radius: 15px;
+    cursor: pointer;
+    width: 65px;
+    color: #b3b3b3;
+    height: 30px;
+    box-shadow: 5px 5px 9px #c9c9c9, -5px -5px 9px #ffffff;
+    font-size: 12px;
+    p {
+      line-height: 30px;
+    }
+  }
+  input[type="checkbox"] {
+    visibility: hidden;
+  }
+  input[type="checkbox"]:checked + label {
+      
+    color: #0080c9;
+    box-shadow: inset 0px 3px 6px #c9c9c9, inset -3px -3px 6px #cbd7c2;
+  }
+  
+  input[type="checkbox"]:checked + label:after {
+    opacity: 1;
+  }
+.date {
+    color: white;
+    height: 35px;
+    border-radius: 15px;
+    font-size: 16px;
+    text-align: center;
+    vertical-align: middle;
+    // margin-top: 50px;
+    background-color: #9FB9C8;
+    font-weight: bold;
+    padding: 5px 0px;   
+}
+.frequency {
+    border-radius: 20px;
+    color: white;
+    height: 35px;
+    font-size: 16px;
+    text-align: center;
+    vertical-align: middle;
+    // margin-top: 50p;
+    width: 617px;
+    margin-left: 15px;
+    background-color: #9FB9C8;
+    font-weight: bold;
+    padding: 5px 0px;
+}
+.exercise {
+    background-color: #FFFFFF;
+    border-radius: 15px;
+    height: 35px;
+    font-size: 16px;
+    text-align: center;
+    vertical-align: middle;
+    margin: 10px 0px;
+    padding: 5px 0px;
+}
+.btn {
+    & > *{
+        
+        border-radius: 15px;
+        height: 35px;
+        border: none;
+    }
+}
+
+select{
+    border: none;
+    width: 100px;
+    height: 35px;
+    border-radius: 15px;
+    padding: 0px 12px;
+}
+.per {
+    display: flex;
+    & > * {
+        margin: 3px 2px;
+    }
+}
+p {
+    margin-top: auto;
+}
+button {
+    color: grey;
+    box-shadow: 5px 5px 9px #c9c9c9, -5px -5px 9px #ffffff;
+    &:focus {
+      outline: none;
+    }
+    &:active {
+        box-shadow: inset 5px 5px 12px #c4c4c4, 
+        inset -5px -5px 12px #ffffff;
+    }
+}
+.btn__style__active {
+    color:blue;
+    box-shadow: inset 5px 5px 12px #c4c4c4, 
+    inset -5px -5px 12px #ffffff;
+    font-weight: bold;
+}
+// .date{
+//     line-height: 35px;
+//     display: flex;
+//     flex-direction: column;
+//     .title{
+//         height: 35px;
+//         background-color: #9FB9C8;
+//         border-radius: 24px;
+//     }
+//     .social{
+//         height: 35px;
+//         background-color: #FFFFFF;
+//         border-radius: 24px;
+//         margin: 15px 0 0;
+//     }
+   
+// }
+// .frequency{
+//     line-height: 35px;
+//     display: flex;
+//     flex-direction: column;
+//     .title{
+//         height: 35px;
+//         background-color: #9FB9C8;
+//         border-radius: 24px;
+//     }
+  
+// }

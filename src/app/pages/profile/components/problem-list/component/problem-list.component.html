@@ -1,0 +1,178 @@
+<div class="container-fluid mt-4">
+    <div class="problem__list__header">
+        <div class="personal__info outsideShadow ml-1">
+            <img
+                src="{{patientModel?.MediaURL}}"
+                alt=""
+            />
+            <div class="info__content">
+                <div>
+                    <h5>Name :</h5>
+                    <p>{{patientModel?.FirstName}} {{patientModel?.LastName}}</p>
+                </div>
+                <div>
+                    <h5>Age :</h5>
+                    <p>{{patientModel?.Age}}</p>
+                </div>
+                <div>
+                    <h5>Phone :</h5>
+                    <p>{{patientModel?.Phone}}</p>
+                </div>
+                <div>
+                    <h5>Email :</h5>
+                    <p>{{patientModel?.Email}}</p>
+                </div>
+                <div>
+                    <h5>Address :</h5>
+                    <p>{{patientModel?.Address}}</p>
+                </div>
+            </div>
+        </div>
+        <div class="personal__note insideShadow mr-1">
+            <h3>Note</h3>
+            <textarea
+                name=""
+                id=""
+                rows="4"
+            ></textarea>
+        </div>
+    </div>
+    <div class="problem__list__body insideShadow ml-1 mr-1 ">
+        <div class="old__problem">
+            <h3 style="color: #707070;">Old problem</h3>
+            <div class="old-problem">
+                <div
+                    class="problem__group"
+                    *ngFor="let problem of oldProblem"
+                >
+                    <div class="title-problem">
+                        <h4>
+                            {{problem.Name}}
+                        </h4>
+                        <img
+                            (click)="onDeleteProblem(problem)"
+                            src="assets/svg/icon_delete.svg"
+                            alt=""
+                        >
+                    </div>
+                    <div class="button__group">
+                        <input
+                            type="checkbox"
+                            id="{{problem.VisitProblemId}}-1"
+                            name="problem"
+                            [checked]="problem.Type == 3"
+                        >
+                        <label
+                            class=""
+                            for="{{problem.VisitProblemId}}-1"
+                            (click)="updateProblemPatient(3, problem.VisitProblemId)"
+                        >
+                            <p>Solved</p>
+                        </label>
+                        <input
+                            type="checkbox"
+                            id="{{problem.VisitProblemId}}-2"
+                            name="problem"
+                            [checked]="problem.Type == 2"
+                        >
+                        <label
+                            class=""
+                            for="{{problem.VisitProblemId}}-2"
+                            (click)="updateProblemPatient(2, problem.VisitProblemId)"
+                        >
+                            <p>Follow up</p>
+                        </label>
+                        <input
+                            type="checkbox"
+                            id="{{problem.VisitProblemId}}-3"
+                            name="problem"
+                            [checked]="problem.Type == 1"
+                        >
+                        <label
+                            class=""
+                            for="{{problem.VisitProblemId}}-3"
+                            (click)="updateProblemPatient(1, problem.VisitProblemId)"
+                        >
+                            <p>Skip</p>
+                        </label>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div style="border-right: thin solid; height: 26em; width: 1px; opacity: 0.2;"></div>
+        <div class="new__problem">
+            <h3 style="color: #707070;">New problem</h3>
+            <div class="old-problem">
+                <div
+                    class="content"
+                    *ngFor="let item of newProblem;"
+                >
+                    <div *ngIf="!item.isUpdate">
+                        {{item.Name}}
+                        <img
+                            class="r-30"
+                            (click)="item.isUpdate = !item.isUpdate"
+                            src="assets/svg/icon-edit.svg"
+                            alt=""
+                        >
+                        <img
+                            (click)="onDeleteProblem(item)"
+                            src="assets/svg/icon_delete.svg"
+                            alt=""
+                        >
+                    </div>
+                    <div
+                        *ngIf="item.isUpdate"
+                        class="example-full-width"
+                    >
+                        <input
+                            type="text"
+                            name="problem"
+                            class="input-update-problem"
+                            [(ngModel)]="item.Name"
+                        />
+                        <button
+                            *ngIf="item.Name"
+                            class="btn"
+                            matSuffix
+                            (click)="onUpdateProblem(item)"
+                        >
+                            <img
+                                src="assets/svg/icon-save.svg"
+                                alt=""
+                            >
+                        </button>
+                    </div>
+                </div>
+                <mat-form-field class="example-full-width">
+                    <input
+                        type="text"
+                        matInput
+                        name="problem"
+                        [(ngModel)]="nameNewProblem"
+                        autocomplete="off"
+                        placeholder="Add new one"
+                    />
+                    <button
+                        *ngIf="nameNewProblem"
+                        class="btn"
+                        matSuffix
+                        (click)="onCreateNewProblem()"
+                    >
+                        <img
+                            class="img-create"
+                            src="assets/svg/create.svg"
+                            alt=""
+                        >
+                    </button>
+                </mat-form-field>
+            </div>
+        </div>
+    </div>
+    <div class="btn__start">
+        <button
+            class=" insideShadow"
+            (click)="sentMessage()"
+        >Start</button>
+    </div>
+</div>

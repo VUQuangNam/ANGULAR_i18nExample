@@ -1,0 +1,117 @@
+<div class="container-fluid mb-4">
+    <div class="row mr-1 mt-3 justify-content-end ">
+        <div class="col-2 selection insideShadow ">
+            <button class="material-icons float-left" style="border: none; background-color: #f6f6f6; top: 7px; left: 10px; position: absolute;">
+                keyboard_arrow_left
+            </button>
+            <p style="line-height: 40px; text-align: center;">All</p>
+            <button class="material-icons float-right" style="border: none; background-color: #f6f6f6; position: absolute; right: 10px; top: 7px;">
+                keyboard_arrow_right
+            </button>
+        </div>
+    </div>
+    <div class="row ml-1 mt-3">
+        <div class="invoice">
+            <table mat-table matSort [dataSource]="dataSource" class="mat-elevation-z8 table-hover text-center tableStyle">
+                <ng-container matColumnDef="Invoice">
+                    <th mat-header-cell *matHeaderCellDef>
+                        Invoice
+                    </th>
+                    <td mat-cell *matCellDef="let item">
+                        <div class="row justify-content-center">
+                            <mat-icon> assignment</mat-icon>
+                        </div>
+                    </td>
+                </ng-container>
+                <tr mat-header-row *matHeaderRowDef="displayedColumnsData; sticky: true"></tr>
+                <tr mat-row *matRowDef="let row; columns: displayedColumnsData;"></tr>
+            </table>
+        </div>
+        <div [ngClass]="check == true ? 'table-center' : 'check-table-center'">
+            <table mat-table matSort [dataSource]="dataSource" class="mat-elevation-z8 table-hover text-center tableStyle">
+                <ng-container matColumnDef="check">
+                    <th mat-header-cell *matHeaderCellDef>
+                        <input id="checkbox" type="checkbox" (change)="selectAll();">
+                        <label for="checkbox" (click)="showPay()"></label>
+                    </th>
+                    <td mat-cell *matCellDef="let item">
+                        <input type="checkbox" [checked]="isSelect" id="{{item.InvoiceId}}" (change)="chooseInvoice(item); 
+                        chooseInvoiceById(item.InvoiceId)" hidden />
+                        <label for="{{item.InvoiceId}}"></label>
+                    </td>
+                </ng-container>
+                <ng-container matColumnDef="No.">
+                    <th mat-header-cell *matHeaderCellDef>
+                        No.
+                    </th>
+                    <td mat-cell *matCellDef="let item">
+                        {{item.InvoiceNumber}}
+                    </td>
+                </ng-container>
+                <ng-container matColumnDef="Date">
+                    <th mat-header-cell *matHeaderCellDef>
+                        Date
+                    </th>
+                    <td mat-cell *matCellDef="let item">
+                        {{item.StartDate}}
+                    </td>
+                </ng-container>
+                <ng-container matColumnDef="Amount">
+                    <th mat-header-cell *matHeaderCellDef>
+                        Amount
+                    </th>
+                    <td mat-cell *matCellDef="let item; let index=index;">
+                        {{item.Status}}
+                    </td>
+                </ng-container>
+                <ng-container matColumnDef="Unpaid">
+                    <th mat-header-cell *matHeaderCellDef>
+                        Unpaid
+                    </th>
+                    <td mat-cell *matCellDef="let item" style="color: #C88C8C">
+                        {{item.Unpaid}}
+                    </td>
+                </ng-container>
+                <tr mat-header-row *matHeaderRowDef="displayedColumns; sticky: true"></tr>
+                <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+            </table>
+        </div>
+        <!-- 
+        <div class="table-pay">
+     
+                <table mat-table matSort [dataSource]="dataSource"
+                    class="mat-elevation-z8 table-hover text-center tableStyle">
+                    <ng-container matColumnDef="Pay">
+                        <th mat-header-cell *matHeaderCellDef>
+                            Pay
+                        </th>
+                        <td mat-cell *matCellDef="let item" >
+                            <input type="text" id="{{item.InvoiceId}}" (change)="change($event,item.InvoiceId,item.InvoiceNumber,item.CurrencyId)">
+                            <label for="{{item.InvoiceId}}" hidden></label>
+                        </td>
+                    </ng-container>
+                    <tr mat-header-row *matHeaderRowDef="displayedColumnsPay; sticky: true"></tr>
+                    <tr mat-row *matRowDef="let row; columns: displayedColumnsPay;"></tr>
+                </table>
+            </div> -->
+        <!-- *ngIf="showRowTable"  -->
+        <!-- <mat-list class="pay"role="list">
+            <div mat-subheader class="title-pay">Pay</div>
+            <mat-list-item role="listitem" *ngFor="let item of invoiceList">
+                <input type="text" style="background-color: #fff;" id="{{item.InvoiceId}}">
+                <label for="{{item.InvoiceId}}">{{item.InvoiceId}}</label>
+            </mat-list-item>
+        </mat-list> -->
+
+    </div>
+    <div class="count">
+        <div class="total">
+            <span>{{total}}</span>
+        </div>
+        <!-- (click)="checkout()" -->
+        <div class="check-out">
+            <button mat-raised-button>Cancle</button>
+            <button style="background-color: #9FB9C8;" (click)="checkout()" routerLink="/pages/profile/invoice/{{patientId}}/medical-bill" mat-raised-button>Checkout</button>
+        </div>
+    </div>
+</div>

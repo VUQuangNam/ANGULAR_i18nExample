@@ -1,0 +1,68 @@
+<div class="container-fluid">
+    <div class="row" style="position: sticky;">
+        <div class="col-1">
+            <mat-icon (click)="back()">keyboard_arrow_left</mat-icon>
+        </div>
+        <div class="col-5">
+            <h3 style="line-height: 55px; font-size: 20px; color: #808080;">Reason for booking</h3>
+        </div>
+        <div class="col-6">
+            <div class="btn__start">
+                <button class="insideShadow" (click)="saveAll()" routerLink="schedule">Select date</button>
+            </div>
+        </div>
+    </div>
+    <div class="problem__list mt-4">
+        <div class="problem__list__header">
+            <div class="personal__info outsideShadow ml-1">
+                <img [src]="mediaURL" alt="" height="100%" />
+                <div class="info__content">
+                    <div>
+                        <h5>Name :</h5>
+                        <input type="text" [(ngModel)]="lastName" readonly>
+                    </div>
+                    <div>
+                        <h5>Age :</h5>
+                        <input type="text" readonly>
+                    </div>
+                    <div>
+                        <h5>Phone :</h5>
+                        <input type="text" [(ngModel)]="phone" readonly>
+                    </div>
+                    <div>
+                        <h5>Email :</h5>
+                        <input type="text" [(ngModel)]="email" readonly>
+                    </div>
+                    <div>
+                        <h5>Address :</h5>
+                        <input type="text" [(ngModel)]="address" readonly>
+                    </div>
+                </div>
+            </div>
+            <div class="personal__note insideShadow mr-1">
+                <h3>Note</h3>
+                <textarea type="text" [(ngModel)]="notePatient"></textarea>
+            </div>
+        </div>
+        <div class="problem__list__body insideShadow ml-1 mr-1 ">
+            <div class="new__problem">
+                <h3 style="color: #707070;">New problem</h3>
+                <div class="content" *ngFor="let newProblem of problemNewList">
+                    <h3>{{newProblem.Name}}</h3>
+                    <mat-icon style="position: unset;" (click)="clear(newProblem.Name)">clear</mat-icon>
+                </div>
+                <input (keyup.enter)="saveNewProblem()" (blur)="saveNewProblem()" style="width: 100%" type="text" *ngIf="!isNew" [(ngModel)]="name">
+                <button class="btn add-button" *ngIf="isNew">
+                    <img src="assets/svg/create.svg" (click)="createNewProblem()" alt="">
+                </button>
+                <button class="btn add-button" *ngIf="!isNew">
+                    <mat-icon style="position: unset;" (click)="saveNewProblem()" alt="">done_outline</mat-icon>
+                </button>
+            </div>
+        </div>
+
+
+    </div>
+
+
+</div>

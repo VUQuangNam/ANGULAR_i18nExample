@@ -1,0 +1,23 @@
+.add-history {
+    font-weight: bold;
+    font-family: Segoe UI;
+    font-size: 16px;
+}
+
+.example-full-width {
+    width: 100%;
+}
+
+.align-self-center {
+    align-self: center;
+}
+
+::ng-deep .create-medication {
+    .mat-form-field-infix {
+        border-top: 0px !important;
+    }
+}
+
+.mt2e {
+    margin-top: 2em;
+}

@@ -1,0 +1,25 @@
+<div class="outsideShadow user-profile">
+    <div class="container">
+        <div class="col">
+            <div class="row">
+                <div class="col-8 text-right info">
+                    <div style="width: 130px; margin: 10px -20px;">
+                        <h4>{{currentProfile?.FirstName}} {{currentProfile?.MiddleName}} {{currentProfile?.LastName}} </h4>
+                        <h4>Doctor</h4>
+                    </div>
+                </div>
+                <div class="col-4">
+                    <img src="{{currentProfile?.MediaURL}}" [matMenuTriggerFor]="menu" style="width:45px; height:45px; margin-top: 4px; border-radius:50%; border:1px solid #fff;cursor: pointer;outline: none;">
+                    <mat-menu #menu="matMenu">
+                        <button mat-menu-item style="outline: none;" (click)="profileDetail()">
+                            <mat-icon>account_circle</mat-icon> Profile
+                        </button>
+                        <button mat-menu-item style="outline: none;" (click)="logout()">
+                            <mat-icon>exit_to_app</mat-icon> Log out
+                        </button>
+                    </mat-menu>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

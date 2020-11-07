@@ -1,0 +1,87 @@
+p {
+    margin: 0;
+    padding: 0;
+}
+
+.container-fluid {
+    padding: 0 20px;
+    height: 75vh;
+    // margin-top: 20px;
+}
+
+.family-table {
+    height: 60vh !important;
+    overflow: auto;
+}
+
+.icon-div {
+    right: 2em;
+    position: absolute;
+    bottom: 1em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+button {
+    padding: 0;
+}
+
+input {
+    border: none;
+    background: none;
+    text-align: center;
+}
+
+.table-btn {
+    width: 184px;
+    height: 40px;
+    display: inline-flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 24px;
+    background: linear-gradient(145deg, #e6e6e6, #ffffff);
+    box-shadow: 5px 5px 10px #cccccc, -5px -5px 10px #ffffff;
+    margin: 10px 20px 0;
+    float: right;
+}
+
+.btn-edit {
+    height: 100%;
+    width: 100%;
+}
+
+.save {
+    width: 80px;
+    height: 35px;
+    background-color: #9FB9C8;
+    border-radius: 18px;
+    color: white;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.group-button {
+    position: absolute;
+    right: 1em;
+    bottom: 0.5em;
+    button {
+        border: none;
+        outline: none;
+        background: none;
+        padding: 0 10px;
+        img {
+            width: 30px;
+            height: 30px;
+        }
+    }
+}
+
+.box {
+    display: flex;
+    flex-direction: row-reverse;
+}
+
+.div-table {
+    margin-top: 10px;
+}

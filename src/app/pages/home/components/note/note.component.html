@@ -1,0 +1,24 @@
+<div class="container" style="padding-top: 0.5rem;">
+    <div class="header">
+        <span (click)="goBack()" class="material-icons">
+            keyboard_arrow_left
+        </span>
+        <h3>Note</h3>
+    </div>
+    <div class="col" style=" height: 8rem ;overflow: auto;">
+        <div class="row note" *ngFor="let note of notes" routerLink="/pages/home/note/{{note.NoteId}}">
+            <div class="col-9 title">
+                <h4>{{note.Title}}</h4>
+            </div>
+            <div class="col-3 date">
+                <small>{{note.NoteDate | date: 'dd/MM/yyyy'}}</small>
+            </div>
+            <div class="col content">
+                <p> <span>{{note.Content}}</span>... </p>
+            </div>
+        </div>
+    </div>
+    <div class="create-note">
+        <img (click)="createNote()" src="assets/svg/Group 1911.svg" alt="">
+    </div>
+</div>

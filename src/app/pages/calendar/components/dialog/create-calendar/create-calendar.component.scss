@@ -1,0 +1,85 @@
+.container-fluid {
+    padding: 0 30px;
+}
+
+p {
+    font-size: 16px;
+    font-weight: 600;
+    margin: 0;
+}
+
+.group-button {
+    position: absolute;
+    right: 20px;
+    button {
+        border: none;
+        outline: none;
+        padding: 0 10px;
+    }
+    .save {
+        height: 35px;
+        width: 95px;
+        color: #fff;
+        background-color: #9FB9C8;
+        border-radius: 18px;
+    }
+    .cancel {
+        width: 85px;
+        color: #8DA2AE;
+        background: none;
+    }
+}
+
+.type {
+    height: 35px !important;
+    margin-bottom: 10px;
+}
+
+label {
+    line-height: 35px;
+    font-size: 16px;
+}
+
+select,
+input[type='date'],
+input[type='text'] {
+    width: 200px;
+    background: none;
+    border: none;
+    height: 35px;
+    line-height: 35px;
+    font-size: 18px;
+}
+
+textarea {
+    border: none;
+    background: none;
+    font-size: 18px;
+}
+
+input[type='time'] {
+    width: 120px;
+    background: none;
+    border: none;
+    height: 35px;
+    line-height: 35px;
+    font-size: 18px;
+    margin: 0 10px;
+}
+
+span {
+    font-size: 16px;
+    padding-right: 0 10px;
+}
+
+.color {
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    border: 1px solid;
+    background-color: #BCD6BF;
+}
+
+.badge {
+    background-color: blue;
+}

@@ -1,0 +1,45 @@
+@mixin input-style {
+    width: 100%;
+    padding: 10px;
+    border-radius: 12px;
+    border: none;
+    box-shadow: inset 5px 5px 10px #cccccc, inset -5px -5px 10px #ffffff;
+}
+
+.row {
+    margin-bottom: 2em;
+    select {
+       @include input-style();
+    }
+    input {
+        @include input-style();
+    }
+    a {
+        color: #707070;
+    }
+}
+
+.sign-in {
+    width: 100%;
+    padding: 10px;
+    border-radius: 10px;
+    border: none;
+    color: #ffffff;
+    background: #9FB9C8;
+}
+
+.title {
+    width: 100%;
+    color: #9FB9C8;
+    font-size: 2.2em;
+}
+
+.container {
+    margin-top: -80px;
+}
+p{
+    color: #d93025;
+    // padding-left: 1.5em;
+    margin-top: .8em;
+    // background: #fff;
+}

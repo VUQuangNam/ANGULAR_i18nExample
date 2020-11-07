@@ -1,0 +1,121 @@
+.follow-up {
+    padding-top: 30px;
+    .follow {
+        font-size: 20px;
+        font-weight: bold;
+        font-family: Segoe UI;
+    }
+    .time {
+        font-size: 20px;
+        font-weight: bold;
+        font-family: Segoe UI;
+        color: #9fb9c8;
+    }
+    .btn-quantity {
+        height: 30px;
+        padding: 0;
+        margin-top: 10px;
+        margin-bottom: 10px;
+        background-color: white;
+        border-radius: 30px;
+        box-shadow: 3px 2px 6px #707070;
+    }
+    .btn-quantity-active {
+        height: 30px;
+        padding: 0;
+        margin-top: 10px;
+        margin-bottom: 10px;
+        background: none;
+        color: #6A9BC1;
+        font-weight: bold;
+        box-shadow: inset 2px 2px 6px #707070;
+    }
+    .r30 {
+        right: 30px;
+    }
+    .r10 {
+        right: 10px;
+    }
+    .list-quantity {
+        border-right: 1px solid black;
+        right: 20px;
+    }
+    .min-width-100px {
+        min-width: 100px;
+        max-height: 38px;
+        padding: 0;
+        // align-self: center;
+    }
+    .other {
+        position: absolute;
+        width: 60%;
+        padding: auto;
+        border: none;
+        margin-left: 15px;
+        height: 100%;
+    }
+    .date {
+        border: none;
+        width: 90%;
+        margin-left: 5px;
+        // margin: 0 10px 0 10px;
+        box-shadow: 3px 2px 6px #707070;
+        border-radius: 30px;
+        padding-left: 10px;
+        height: 30px;
+        padding-right: 10px;
+    }
+    .date-time {
+        width: 70px;
+        border: none;
+        box-shadow: 3px 2px 6px #707070;
+        border-radius: 30px;
+    }
+}
+
+.confirm {
+    button {
+        background-color: #9FB9C8;
+        width: 120px;
+        height: 35px;
+        border-radius: 18px;
+        color: white;
+        border: none;
+        font-weight: bold;
+    }
+}
+
+.home-care {
+    position: absolute;
+    right: 20px;
+    bottom: 10px;
+    padding: 20px;
+    align-items: baseline;
+    .button-yes-no {
+        margin: 0 10px;
+        button {
+            margin: 0 10px;
+            width: 90px;
+            height: 30px;
+            border-radius: 18px;
+            background-color: white;
+            text-align: center;
+            font-weight: bold;
+            color: black;
+            border: none;
+            box-shadow: 3px 2px 6px #707070;
+        }
+        .button-active {
+            margin: 0 10px;
+            width: 90px;
+            height: 30px;
+            border-radius: 18px;
+            background-color: white;
+            text-align: center;
+            font-weight: bold;
+            color: #6A9BC1;
+            border: none;
+            box-shadow: inset 2px 2px 6px #707070;
+        }
+    }
+}

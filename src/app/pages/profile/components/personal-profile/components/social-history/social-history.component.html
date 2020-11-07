@@ -1,0 +1,190 @@
+<div class="container-fluid" style="height: 577px; display: flex; flex-direction: row;">
+    <div class="title1" style="margin-top: 60px;">
+        <div class="date">Date</div>
+        <div>
+            <div class="exercise">Smoking</div>
+            <div class="exercise">Alcohol</div>
+            <div class="exercise">Exercise</div>
+        </div>
+    </div>
+    <div class="title2" style="margin-top: 60px;">
+        <div class="frequency">Frequency</div>
+        <!-- <div style="display: flex; flex-direction: row;"> -->
+        <div style="display: flex; flex-direction: column; margin-top: 8px;">
+            <div class="btn" style="width: 275px; margin: -20px;" *ngFor="let smoking of Smoking">
+                <input type="checkbox" id="{{smoking.SocialfactorId}}" name="socialfactor" [checked]="smoking.Type == 1">
+                <label class="" (click)="updateSocialfactor(1, smoking.PatientSocialfactorId)" for="{{smoking.SocialfactorId}}">
+              <p>Yes</p>
+            </label>
+                <input type="checkbox" id="{{smoking.SocialfactorId}}" name="socialfactor" [checked]="smoking.Type == 2">
+                <label (click)="updateSocialfactor(2, smoking.PatientSocialfactorId)" class="" for="{{smoking.SocialfactorId}}">
+              <p>No</p>
+            </label>
+                <input type="checkbox" id="{{smoking.SocialfactorId}}" name="socialfactor" [checked]="smoking.Type == 3">
+                <label (click)="updateSocialfactor(3, smoking.PatientSocialfactorId)" class="" for="{{smoking.SocialfactorId}}">
+              <p>Stopped</p>
+            </label>
+            </div>
+            <div class="btn" style="width: 275px; margin: -5px; margin-left: -20px; " *ngFor="let alcohol of Alcohol">
+                <input type="checkbox" id="{{alcohol.SocialfactorId}}" name="socialfactor" [checked]="alcohol.Type == 1">
+                <label (click)="updateSocialfactor(1, alcohol.PatientSocialfactorId)" class="" for="{{alcohol.SocialfactorId}}">
+            <p>Yes</p>
+          </label>
+                <input type="checkbox" id="{{alcohol.SocialfactorId}}" name="socialfactor" [checked]="alcohol.Type == 2">
+                <label (click)="updateSocialfactor(2, alcohol.PatientSocialfactorId)" class="" for="{{alcohol.SocialfactorId}}">
+            <p>No</p>
+          </label>
+                <input type="checkbox" id="{{alcohol.SocialfactorId}}" name="socialfactor" [checked]="alcohol.Type == 3">
+                <label (click)="updateSocialfactor(3, alcohol.PatientSocialfactorId)" class="" for="{{alcohol.SocialfactorId}}">
+            <p>Stopped</p>
+          </label>
+                <div class="per" *ngFor="let alcohol of Alcohol" style="margin-top: -47px;
+          margin-left: 272px">
+                    <div class="display per" *ngIf="alcohol.Type==1 || alcohol.Type==3">
+                        <select [(value)]="selectedAlcohol" (change)="updateDateAlcohol(alcohol.PatientSocialfactorId)" name="frequencyValueAlcohol" [(ngModel)]="frequencyValueAlcohol">
+                <option value="1" (change)="chooseDateAlcohol(1)" selected>1 times</option>
+                <option value="2" (change)="chooseDateAlcohol(2)">2 times</option>
+                <option value="3" (change)="chooseDateAlcohol(3)">3 times</option>
+                <option value="4" (change)="chooseDateAlcohol(4)">4 times</option>
+                <option value="5" (change)="chooseDateAlcohol(5)">5 times</option>
+                <option value="6" (change)="chooseDateAlcohol(6)">6 times</option>
+                <option value="7" (change)="chooseDateAlcohol(7)">7 times</option>
+                <option value="8" (change)="chooseDateAlcohol(8)">8 times</option>
+                <option value="9" (change)="chooseDateAlcohol(9)">9 times</option>
+                <option value="10" (change)="chooseDateAlcohol(10)">10 times</option>
+              </select>
+                        <p style="line-height: 35px;">per</p>
+                        <select [(value)]="selectedAlcoholDate" (change)="updateFrequencyUnitAlcohol(alcohol.PatientSocialfactorId)" name="frequencyUnitAlcohol" [(ngModel)]="frequencyUnitAlcohol">
+                <option value="1" (change)="chooseFrequencyUnitAlcohol(1)">day</option>
+                <option value="2" (change)="chooseFrequencyUnitAlcohol(2)">month</option>
+                <option value="3" (change)="chooseFrequencyUnitAlcohol(3)">year</option>
+              </select>
+                        <p style="line-height: 35px;">for</p>
+                        <select [(value)]="selectedForAncohol" (change)="updateDateForAlcohol(alcohol.Type,alcohol.PatientSocialfactorId)" name="dateForAlcohol" [(ngModel)]="dateForAlcohol">
+                <option value="1" (change)="chooseForAlcohol(1)">1 years</option>
+                <option value="2" (change)="chooseForAlcohol(2)">2 years</option>
+                <option value="3" (change)="chooseForAlcohol(3)">3 years</option>
+                <option value="4" (change)="chooseForAlcohol(4)">4 years</option>
+                <option value="5" (change)="chooseForAlcohol(5)">5 years</option>
+              </select>
+                    </div>
+                </div>
+            </div>
+            <div class="btn" style="width: 275px; margin: -21px; margin-top: -9px; " *ngFor="let excercise of Excercise">
+                <input type="checkbox" id="{{excercise.SocialfactorId}}" name="Socialfactor" [checked]="excercise.Type == 1">
+                <label (click)="updateSocialfactor(1, excercise.PatientSocialfactorId)" class="" for="{{excercise.SocialfactorId}}">
+            <p>Yes</p>
+          </label>
+                <input type="checkbox" id="{{excercise.SocialfactorId}}" name="Socialfactor" [checked]="excercise.Type == 2">
+                <label (click)="updateSocialfactor(2, excercise.PatientSocialfactorId)" class="" for="{{excercise.SocialfactorId}}">
+            <p>No</p>
+          </label>
+                <input type="checkbox" id="{{excercise.SocialfactorId}}" name="Socialfactor" [checked]="excercise.Type == 3">
+                <label (click)="updateSocialfactor(3, excercise.PatientSocialfactorId)" class="" for="{{excercise.SocialfactorId}}">
+            <p>Stopped</p>
+          </label>
+                <div class="per" style="margin-left: 272px; margin-top: -43px;" *ngFor="let excercise of Excercise">
+                    <div class="display per" *ngIf="excercise.Type==1 || excercise.Type==3">
+                        <select [(value)]="selectedExcercise" (change)="updateDateExcercise(excercise.PatientSocialfactorId)" name="frequencyValueExcercise" [(ngModel)]="frequencyValueExcercise">
+                <option value="1" (change)="chooseDateExcercise(1)" selected>1 times</option>
+                <option value="2" (change)="chooseDateExcercise(2)">2 times</option>
+                <option value="3" (change)="chooseDateExcercise(3)">3 times</option>
+                <option value="4" (change)="chooseDateExcercise(4)">4 times</option>
+                <option value="5" (change)="chooseDateExcercise(5)">5 times</option>
+                <option value="6" (change)="chooseDateExcercise(6)">6 times</option>
+                <option value="7" (change)="chooseDateExcercise(7)">7 times</option>
+                <option value="8" (change)="chooseDateExcercise(8)">8 times</option>
+                <option value="9" (change)="chooseDateExcercise(9)">9 times</option>
+                <option value="10" (change)="chooseDateExcercise(10)">10 times</option>
+              </select>
+                        <p style="line-height: 35px;">per</p>
+                        <select [(value)]="selectedExcerciseDate" (change)="updateFrequencyUnit(excercise.PatientSocialfactorId)" name="frequencyUnitExcercise" [(ngModel)]="frequencyUnitExcercise">
+                <option value="1" (change)="chooseFrequencyUnitExcercise(1)">day</option>
+                <option value="2" (change)="chooseFrequencyUnitExcercise(2)">month</option>
+                <option value="3" (change)="chooseFrequencyUnitExcercise(3)">year</option>
+              </select>
+                        <p style="line-height: 35px;">for</p>
+                        <select [(value)]="selectedForExcercise" (change)="updateDateForExcercise(excercise.Type,excercise.PatientSocialfactorId)" name="dateForExcercise" [(ngModel)]="dateForExcercise">
+                <option value="1" (change)="chooseForExcercise(1)">1 years</option>
+                <option value="2" (change)="chooseForExcercise(2)">2 years</option>
+                <option value="3" (change)="chooseForExcercise(3)">3 years</option>
+                <option value="4" (change)="chooseForExcercise(4)">4 years</option>
+                <option value="5" (change)="chooseForExcercise(5)">5 years</option>
+              </select>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div style="margin-top: 54px;">
+            <!-- <div class="per" style="display: flex; flex-direction: row;" *ngFor="let alcohol of Alcohol">
+          <div class="display per" *ngIf="alcohol.Type==1 || alcohol.Type==3">
+            <select [(value)]="selectedAlcohol" (change)="updateDateAlcohol(alcohol.PatientSocialfactorId)"
+              name="frequencyValueAlcohol" [(ngModel)]="frequencyValueAlcohol">
+              <option value="1" (change)="chooseDateAlcohol(1)" selected>1 times</option>
+              <option value="2" (change)="chooseDateAlcohol(2)">2 times</option>
+              <option value="3" (change)="chooseDateAlcohol(3)">3 times</option>
+              <option value="4" (change)="chooseDateAlcohol(4)">4 times</option>
+              <option value="5" (change)="chooseDateAlcohol(5)">5 times</option>
+              <option value="6" (change)="chooseDateAlcohol(6)">6 times</option>
+              <option value="7" (change)="chooseDateAlcohol(7)">7 times</option>
+              <option value="8" (change)="chooseDateAlcohol(8)">8 times</option>
+              <option value="9" (change)="chooseDateAlcohol(9)">9 times</option>
+              <option value="10" (change)="chooseDateAlcohol(10)">10 times</option>
+            </select>
+            <p style="line-height: 35px;">per</p>
+            <select [(value)]="selectedAlcoholDate" (change)="updateFrequencyUnitAlcohol(alcohol.PatientSocialfactorId)"
+              name="frequencyUnitAlcohol" [(ngModel)]="frequencyUnitAlcohol">
+              <option value="1" (change)="chooseFrequencyUnitAlcohol(1)">day</option>
+              <option value="2" (change)="chooseFrequencyUnitAlcohol(2)">month</option>
+              <option value="3" (change)="chooseFrequencyUnitAlcohol(3)">year</option>
+            </select>
+            <p style="line-height: 35px;">for</p>
+            <select [(value)]="selectedForAncohol"
+              (change)="updateDateForAlcohol(alcohol.Type,alcohol.PatientSocialfactorId)" name="dateForAlcohol"
+              [(ngModel)]="dateForAlcohol">
+              <option value="1" (change)="chooseForAlcohol(1)">1 years</option>
+              <option value="2" (change)="chooseForAlcohol(2)">2 years</option>
+              <option value="3" (change)="chooseForAlcohol(3)">3 years</option>
+              <option value="4" (change)="chooseForAlcohol(4)">4 years</option>
+              <option value="5" (change)="chooseForAlcohol(5)">5 years</option>
+            </select>
+          </div>
+        </div> -->
+            <!-- <div class="per" style="display: flex; flex-direction: row;" *ngFor="let excercise of Excercise">
+          <div class="display per" *ngIf="excercise.Type==1 || excercise.Type==3">
+            <select [(value)]="selectedExcercise" (change)="updateDateExcercise(excercise.PatientSocialfactorId)"
+              name="frequencyValueExcercise" [(ngModel)]="frequencyValueExcercise">
+              <option value="1" (change)="chooseDateExcercise(1)" selected>1 times</option>
+              <option value="2" (change)="chooseDateExcercise(2)">2 times</option>
+              <option value="3" (change)="chooseDateExcercise(3)">3 times</option>
+              <option value="4" (change)="chooseDateExcercise(4)">4 times</option>
+              <option value="5" (change)="chooseDateExcercise(5)">5 times</option>
+              <option value="6" (change)="chooseDateExcercise(6)">6 times</option>
+              <option value="7" (change)="chooseDateExcercise(7)">7 times</option>
+              <option value="8" (change)="chooseDateExcercise(8)">8 times</option>
+              <option value="9" (change)="chooseDateExcercise(9)">9 times</option>
+              <option value="10" (change)="chooseDateExcercise(10)">10 times</option>
+            </select>
+            <p style="line-height: 35px;">per</p>
+            <select [(value)]="selectedExcerciseDate" (change)="updateFrequencyUnit(excercise.PatientSocialfactorId)"
+              name="frequencyUnitExcercise" [(ngModel)]="frequencyUnitExcercise">
+              <option value="1" (change)="chooseFrequencyUnitExcercise(1)">day</option>
+              <option value="2" (change)="chooseFrequencyUnitExcercise(2)">month</option>
+              <option value="3" (change)="chooseFrequencyUnitExcercise(3)">year</option>
+            </select>
+            <p style="line-height: 35px;">for</p>
+            <select [(value)]="selectedForExcercise"
+              (change)="updateDateForExcercise(excercise.Type,excercise.PatientSocialfactorId)" name="dateForExcercise"
+              [(ngModel)]="dateForExcercise">
+              <option value="1" (change)="chooseForExcercise(1)">1 years</option>
+              <option value="2" (change)="chooseForExcercise(2)">2 years</option>
+              <option value="3" (change)="chooseForExcercise(3)">3 years</option>
+              <option value="4" (change)="chooseForExcercise(4)">4 years</option>
+              <option value="5" (change)="chooseForExcercise(5)">5 years</option>
+            </select>
+          </div>
+        </div> -->
+        </div>
+        <!-- </div> -->
+    </div>
+</div>

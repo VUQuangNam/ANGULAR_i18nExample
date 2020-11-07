@@ -1,0 +1,92 @@
+<div class="container" style="margin-top: 2em">
+  <div class="row">
+    <div class="col-9 add-history">Add Presciption</div>
+    <div class="col-3 btn-1">
+      <div class="button-group">
+        <button class="btn-cancel" (click)="closeDialog()">Cancel</button>
+        <button class="btn-save" (click)="createPrescription()">Save</button>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="container create-medication">
+  <div class="row">
+    <div class="col-3 align-self-center">Name:</div>
+    <div class="col-9 align-self-center">
+      <mat-form-field class="example-full-width">
+        <input
+          (input)="filterListDrug($event.target.value)"
+          [(ngModel)]="searchField"
+          matInput
+          name="search1"
+        />
+      </mat-form-field>
+      <mat-selection-list class="example-full-width" [multiple]="false">
+        <mat-list-option
+          *ngFor="let item of filterDrug"
+          [value]="item.Name"
+          (click)="onChangeValueDrug(item)"
+        >
+          {{ item.Name }}
+        </mat-list-option>
+      </mat-selection-list>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-3 align-self-center">Dose (/mg):</div>
+    <div class="col-9 align-self-center">
+      <mat-form-field class="example-full-width">
+        <mat-label></mat-label>
+        <input matInput name="DoseValue" [(ngModel)]="doseUnit" />
+      </mat-form-field>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-3 align-self-center">Frequenncy (/day):</div>
+    <div class="col-9 align-self-center">
+      <mat-form-field class="example-full-width">
+        <mat-label></mat-label>
+        <input matInput name="FrequencyUnit" [(ngModel)]="frequencyUnit" />
+      </mat-form-field>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-3 align-self-center">Start</div>
+    <div class="col-9 align-self-center">
+      <mat-form-field class="example-full-width">
+        <mat-label></mat-label>
+        <input matInput type="date" name="StartDate" [(ngModel)]="startDate" />
+      </mat-form-field>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-3 align-self-center">End</div>
+    <div class="col-9 align-self-center">
+      <mat-form-field class="example-full-width">
+        <mat-label></mat-label>
+        <input matInput type="date" name="EndDate" [(ngModel)]="endDate" />
+      </mat-form-field>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-3 align-self-center">Route:</div>
+    <div class="col-9 align-self-center">
+      <mat-form-field class="example-full-width">
+        <mat-select name="DrugrouteId" [(ngModel)]="drugrouteId">
+          <mat-option *ngFor="let item of RouteList" [value]="item.DrugrouteId">
+            {{ item.Name }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-3 align-self-center">Details:</div>
+    <div class="col-9 align-self-center">
+      <mat-form-field class="example-full-width">
+        <mat-label></mat-label>
+        <input matInput type="text" name="Detail" [(ngModel)]="instruction" />
+      </mat-form-field>
+    </div>
+  </div>
+</div>

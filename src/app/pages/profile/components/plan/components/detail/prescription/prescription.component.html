@@ -1,0 +1,119 @@
+<table
+    mat-table
+    class="tableStyle"
+    [dataSource]="dataSource"
+>
+    <ng-container matColumnDef="Name">
+        <th
+            mat-header-cell
+            *matHeaderCellDef
+        >Name</th>
+        <td
+            mat-cell
+            *matCellDef="let prescription"
+        >{{ prescription.NameDrug }}</td>
+    </ng-container>
+    <ng-container matColumnDef="Dose">
+        <th
+            mat-header-cell
+            *matHeaderCellDef
+        >Dose</th>
+        <td
+            mat-cell
+            *matCellDef="let prescription"
+        >{{ prescription.DoseUnit }}</td>
+    </ng-container>
+    <ng-container matColumnDef="Frequency">
+        <th
+            mat-header-cell
+            *matHeaderCellDef
+        >Frequency</th>
+        <td
+            mat-cell
+            *matCellDef="let prescription"
+        >
+            {{ prescription.FrequencyUnit }}
+        </td>
+    </ng-container>
+    <ng-container matColumnDef="Start">
+        <th
+            mat-header-cell
+            *matHeaderCellDef
+        >Start</th>
+        <td
+            mat-cell
+            *matCellDef="let prescription"
+        >
+            {{ prescription.StartDate | date: "dd/MM/yyyy" }}
+        </td>
+    </ng-container>
+    <ng-container matColumnDef="End">
+        <th
+            mat-header-cell
+            *matHeaderCellDef
+        >End</th>
+        <td
+            mat-cell
+            *matCellDef="let prescription"
+        >
+            {{ prescription.EndDate | date: "dd/MM/yyyy" }}
+        </td>
+    </ng-container>
+    <ng-container matColumnDef="Route">
+        <th
+            mat-header-cell
+            *matHeaderCellDef
+        >Route</th>
+        <td
+            mat-cell
+            *matCellDef="let prescription"
+        >
+            {{ prescription.NameDrugRoute }}
+        </td>
+    </ng-container>
+    <ng-container matColumnDef="Detail">
+        <th
+            mat-header-cell
+            *matHeaderCellDef
+        >Detail</th>
+        <td
+            mat-cell
+            *matCellDef="let prescription"
+        >
+            {{ prescription.Instruction }}
+        </td>
+    </ng-container>
+    <ng-container matColumnDef="delete">
+        <th
+            mat-header-cell
+            *matHeaderCellDef
+        ></th>
+        <td
+            mat-cell
+            *matCellDef="let item"
+        >
+            <mat-icon>delete</mat-icon>
+        </td>
+    </ng-container>
+
+    <tr
+        mat-header-row
+        *matHeaderRowDef="displayedColumns"
+    ></tr>
+    <tr
+        mat-row
+        *matRowDef="let row; columns: displayedColumns"
+    ></tr>
+</table>
+<div class="button-group">
+    <!-- <button (click)="createPrescription()">Book</button> -->
+    <button class="btn pr-3 pl-3">
+        <mat-icon (click)="openDialog()">add_circle_outline</mat-icon>
+    </button>
+    <button class="btn">
+        <mat-icon (click)="openDialogEdit()">edit</mat-icon>
+    </button>
+    <button class="btn">
+        <mat-icon>print</mat-icon>
+    </button>
+</div>

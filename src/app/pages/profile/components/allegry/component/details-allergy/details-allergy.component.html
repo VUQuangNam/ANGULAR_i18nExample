@@ -1,0 +1,85 @@
+<div class="container" style="margin-top: 2em">
+  <div class="row">
+    <div class="col-10 add-history">Update allegry</div>
+    <div class="col-2 btn-1">
+      <div class="button-group">
+        <!-- <button class="btn-cancel" (click)="closeDialog()">Cancel</button> -->
+        <button class="btn-save" (click)="updateAllegryPatient()">Save</button>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="container" style="margin-top: 2em">
+  <div class="row">
+    <div class="col-3"></div>
+    <div class="col-3 title align-self-center">Allergy for:</div>
+    <div class="col-3 align-self-center">
+      <mat-form-field>
+        <mat-select [(ngModel)]="model.AllergyId" name="AllergyId" disabled>
+          <mat-option *ngFor="let item of allergyList" [value]="item.AllergyId">
+            {{ item.Name }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+    <div class="col-3"></div>
+  </div>
+  <div class="row">
+    <div class="col-3"></div>
+    <div class="col-3 title align-self-center">Scince:</div>
+    <div class="col-3 align-self-center">
+      <input
+        matInput
+        type="date"
+        name="date"
+        required
+        class="date-time"
+        [(ngModel)]="model.StartDate"
+      />
+    </div>
+    <div class="col-3"></div>
+  </div>
+  <div class="row">
+    <div class="col-3"></div>
+    <div class="col-3 title-1 align-self-center">Symptoms</div>
+    <div class="col-3 align-self-center">
+      <mat-form-field class="example-full-width">
+        <input
+          type="text"
+          matInput
+          name="problem"
+          [(ngModel)]="model.SymptomSNOMEDDescription"
+          required
+          disabled
+        />
+      </mat-form-field>
+      <mat-selection-list class="example-full-width" [multiple]="false">
+        <mat-list-option
+          *ngFor="let item of symptomsList"
+          [value]="item.SymptomSNOMEDCode"
+          (click)="setTermValue(item)"
+        >
+          {{ item.FullName }}
+        </mat-list-option>
+      </mat-selection-list>
+    </div>
+    <div class="col-3"></div>
+  </div>
+  <div class="row">
+    <div class="col-3"></div>
+    <div class="col-3 title align-self-center">Frequency</div>
+    <div class="col-3 align-self-center">
+      <mat-form-field>
+        <input
+          matInput
+          type="text"
+          name="date"
+          required
+          class="date-time"
+          [(ngModel)]="model.Frequency"
+        />
+      </mat-form-field>
+    </div>
+    <div class="col-3"></div>
+  </div>
+</div>

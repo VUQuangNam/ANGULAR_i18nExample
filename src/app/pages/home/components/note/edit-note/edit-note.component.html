@@ -1,0 +1,45 @@
+<div class="container dialog-container">
+    <div class="row">
+        <div class="col d-flex">
+            <span (click)="goBack()" class="material-icons mr-2">
+                keyboard_arrow_left
+            </span>
+            <div class="title">
+                Note Detail
+            </div>
+        </div>
+        <div class="col">
+            <div class="float-right">
+                <button class="btn cancel" (click)="deleteNote()">Delete</button>
+                <button class="btn save" (click)="editNote()">Update</button>
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="row">
+        <div class="col-1">
+            <span>Created:</span>
+        </div>
+        <div class="col">
+            <input type="date" [(ngModel)]="date"> at <input type="time" [(ngModel)]="time">
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-1">
+            <span>Subject:</span>
+        </div>
+        <div class="col">
+            <input type="text" [(ngModel)]="note.Title">
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-1">
+            <span>Body:</span>
+        </div>
+        <div class="col">
+            <textarea class="form-control" rows="3" [(ngModel)]="note.Content"></textarea>
+        </div>
+    </div>
+</div>

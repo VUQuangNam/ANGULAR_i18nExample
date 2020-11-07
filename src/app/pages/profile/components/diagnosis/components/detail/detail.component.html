@@ -1,0 +1,183 @@
+<div class="container-fluid" style="height: 74vh">
+  <div class="row justify-content-left align-items-center text-center top">
+    <div class="col-3">
+      <h3>Not yet reviewed test:</h3>
+    </div>
+    <div class="col-3 not-reviewed">
+      <div class="problem">Coronary angiogram</div>
+    </div>
+    <div class="col-1 not-reviewed">
+      <div class="problem">Holter</div>
+    </div>
+    <div class="col-2 not-reviewed">
+      <div class="problem">Stress test</div>
+    </div>
+  </div>
+  <div class="row justify-content-between middle">
+    <div class="col-6">
+      <div>
+        <h3>Last visit:</h3>
+        <div class="last-visit">
+          <div class="date">
+            {{ sequenceNumberone?.VisitDate | date: "dd/MM/yyyy" }}
+          </div>
+          <div class="abc">
+            {{ sequenceNumberone?.SNOMEDFullName }}
+          </div>
+          <div class="date">Possible other diagnosis</div>
+          <div class="abc">
+            {{ sequenceNumbertwo?.SNOMEDFullName }}
+          </div>
+          <div class="abc" style="background-color: #f6f6f6">
+            {{ sequenceNumberthree?.SNOMEDFullName }}
+          </div>
+          <div class="abc">
+            {{ sequenceNumberfour?.SNOMEDFullName }}
+          </div>
+          <div class="abc" style="background-color: #f6f6f6">
+            {{ sequenceNumberfive?.SNOMEDFullName }}
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-6">
+      <div>
+        <h3>This visit:</h3>
+        <div class="this-visit">
+          <div class="date">Today, {{ today }}</div>
+          <div class="diagnosis">
+            <input
+              type="text"
+              matInput
+              name="problem"
+              [(ngModel)]="DiagnosisName"
+              (input)="searchTermDiagnosis($event.target.value, 1)"
+              [value]="sequenceNumber1?.SNOMEDFullName"
+              required
+              placeholder="Type here"
+            />
+
+            <mat-selection-list
+              *ngIf="type === 1"
+              class="example-full-width"
+              [multiple]="false"
+            >
+              <mat-list-option
+                *ngFor="let item of diagnosisList"
+                (click)="onChangeValue(item, 1)"
+              >
+                {{ item.FullName }}
+              </mat-list-option>
+            </mat-selection-list>
+          </div>
+          <div class="date">Possible other diagnosis</div>
+          <div class="diagnosis" style="background-color: white">
+            <input
+              type="text"
+              matInput
+              name="problem"
+              [(ngModel)]="DiagnosisName1"
+              (input)="searchTermDiagnosis($event.target.value, 2)"
+              [value]="sequenceNumber2?.SNOMEDFullName"
+              required
+              placeholder="Type here"
+            />
+            <mat-selection-list
+              *ngIf="type === 2"
+              class="example-full-width"
+              [multiple]="false"
+            >
+              <mat-list-option
+                *ngFor="let item of diagnosisList"
+                (click)="onChangeValue(item, 2)"
+              >
+                {{ item.FullName }}
+              </mat-list-option>
+            </mat-selection-list>
+          </div>
+          <div class="diagnosis" style="background-color: #f6f6f6">
+            <input
+              style="background-color: #f6f6f6"
+              type="text"
+              matInput
+              name="problem"
+              [(ngModel)]="DiagnosisName2"
+              (input)="searchTermDiagnosis($event.target.value, 3)"
+              [value]="sequenceNumber3?.SNOMEDFullName"
+              required
+              placeholder="Type here"
+            />
+            <mat-selection-list
+              *ngIf="type === 3"
+              class="example-full-width"
+              [multiple]="false"
+            >
+              <mat-list-option
+                *ngFor="let item of diagnosisList"
+                (click)="onChangeValue(item, 3)"
+              >
+                {{ item.FullName }}
+              </mat-list-option>
+            </mat-selection-list>
+          </div>
+          <div class="diagnosis">
+            <input
+              type="text"
+              matInput
+              name="problem"
+              [(ngModel)]="DiagnosisName3"
+              (input)="searchTermDiagnosis($event.target.value, 4)"
+              [value]="sequenceNumber4?.SNOMEDFullName"
+              required
+              placeholder="Type here"
+            />
+            <mat-selection-list
+              *ngIf="type === 4"
+              class="example-full-width"
+              [multiple]="false"
+            >
+              <mat-list-option
+                *ngFor="let item of diagnosisList"
+                (click)="onChangeValue(item, 4)"
+              >
+                {{ item.FullName }}
+              </mat-list-option>
+            </mat-selection-list>
+          </div>
+          <div class="diagnosis" style="background-color: #f6f6f6">
+            <input
+              style="background-color: #f6f6f6"
+              type="text"
+              matInput
+              name="problem"
+              [(ngModel)]="DiagnosisName4"
+              (input)="searchTermDiagnosis($event.target.value, 5)"
+              [value]="sequenceNumber5?.SNOMEDFullName"
+              required
+              placeholder="Type here"
+            />
+            <mat-selection-list
+              *ngIf="type === 5"
+              class="example-full-width"
+              [multiple]="false"
+            >
+              <mat-list-option
+                *ngFor="let item of diagnosisList"
+                (click)="onChangeValue(item, 5)"
+              >
+                {{ item.FullName }}
+              </mat-list-option>
+            </mat-selection-list>
+          </div>
+        </div>
+      </div>
+      <div class="col-6" style="margin-top: 2em">
+        <button class="btn-1" (click)="createDiagnosis()">Save</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="print">
+    <mat-icon style="font-size: 35px; color: #939393">print</mat-icon>
+  </div>
+</div>

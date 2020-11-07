@@ -1,0 +1,40 @@
+table {
+  width: 100%;
+}
+.tableStyle {
+  text-align: center;
+}
+.container-fluid {
+  padding: 20px;
+  height: 81vh;
+  width: 96.5%;
+}
+p {
+  margin: 0;
+}
+.button-group {
+  img {
+    width: 30px;
+    height: 30px;
+  }
+}
+.edit {
+  width: 100%;
+}
+input {
+  border: none;
+  background: none;
+  width: 100%;
+}
+.button-group {
+  position: absolute;
+  bottom: 1em;
+  right: 2em;
+}
+button {
+  padding: 0;
+}
+mat-icon {
+  font-size: 35px;
+  color: #707070;
+}

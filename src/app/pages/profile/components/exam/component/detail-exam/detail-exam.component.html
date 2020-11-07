@@ -1,0 +1,216 @@
+<div
+    class="c-loading"
+    [class.c-loading--hidden]="isLoading"
+    id="loading-page"
+>
+    <div
+        class="c-loading__status spinner-border m-5"
+        role="status"
+    >
+        <span class="sr-only">Loading...</span>
+    </div>
+</div>
+<div class="position-r">
+    <ul class="nav">
+        <li
+            class="nav-item"
+            *ngFor="let i of data.listLv2"
+        >
+            <button
+                (click)="onClickActiveLv2(i)"
+                class="nav-title btn fz-15 fw-700"
+            >
+                {{ i.Name }}
+            </button>
+            <hr
+                class="nav-hr"
+                [style.background]="i.active ? 'black' : ''"
+            />
+            <div class="nav-btn">
+                <button
+                    [class]="!i.isAbnormal ? 'btn outsideShadowExam fz-12-mw-80' : 'btn insideShadow fz-12-mw-80'"
+                    (click)="onSelectExamNormalLv1(i)"
+                >
+                    Normal
+                </button>
+                <button
+                    [class]="i.isAbnormal ? 'btn outsideShadowExam fz-12-mw-80' : 'btn insideShadow fz-12-mw-80'"
+                    (click)="onSelectExamAbnormalLv1(i)"
+                >
+                    Abnormal
+                </button>
+            </div>
+        </li>
+        <button
+            type="button"
+            class="btn btn-openDialog"
+            (click)="openDialog()"
+        >
+            <mat-icon class="mat-icon-style">add_circle_outline</mat-icon>
+        </button>
+    </ul>
+</div>
+<div class="position-r">
+    <ul
+        *ngIf="!isAbnormal"
+        class="nav"
+    >
+        <li
+            class="nav-item2"
+            *ngFor="let i of listExamSub"
+        >
+            <button
+                (click)="onClickActiveListExamSub(i)"
+                class="nav-title btn fz-15 fw-700"
+            >
+                {{ i.Name }}
+            </button>
+            <hr
+                class="nav-hr"
+                [style.background]="i.active ? 'black' : ''"
+            />
+            <div class="nav-btn">
+                <button
+                    [class]="i.ResultId == 0 ? 'btn outsideShadowExam fz-12-mw-80' : 'btn insideShadow fz-12-mw-80'">
+                    Not Exam
+                </button>
+                <button
+                    [class]="i.ResultId == 1 ? 'btn outsideShadowExam fz-12-mw-80' : 'btn insideShadow fz-12-mw-80'"
+                    (click)="onSelectExamNormalLv2(i)"
+                >
+                    Normal
+                </button>
+                <button
+                    (click)="onSelectExamAbnormalLv2(i)"
+                    [class]="i.ResultId == 2 ? 'btn outsideShadowExam fz-12-mw-80' : 'btn insideShadow fz-12-mw-80'"
+                >
+                    Abnormal
+                </button>
+            </div>
+        </li>
+        <button
+            type="button"
+            class="btn btn-openDialog"
+            (click)="openDialog2()"
+        >
+            <mat-icon class="mat-icon-style">add_circle_outline</mat-icon>
+        </button>
+    </ul>
+</div>
+<div class="row m-0 listSection-exam">
+    <div class="col-7">
+        <div
+            *ngFor="let item of listSection"
+            class="row"
+        >
+            <button
+                class="item-section btn col-4 fz-14"
+                (click)="onSeclectionExam(item)"
+                [ngClass]="{ black: item.active }"
+            >
+                {{ item?.Name }}
+            </button>
+            <div class="col-8 align-self-center">
+                <button
+                    *ngIf="item.active"
+                    (click)="onSeclectSetionNotExam(item)"
+                    [class]="
+                    item.ResultId == 0
+                    ? 'btn outsideShadowExam item-section col-4 fz-14'
+                    : 'btn insideShadow item-section col-4 fz-14 bgw'
+                "
+                >
+                    Not Exam
+                </button>
+                <button
+                    *ngIf="item.active"
+                    (click)="onSeclectSetionNormal(item)"
+                    [class]="
+                    item.ResultId == 1
+                    ? 'btn outsideShadowExam item-section col-4 fz-14'
+                    : 'btn insideShadow item-section col-4 fz-14 bgw'
+                "
+                >
+                    Normal
+                </button>
+                <button
+                    *ngIf="item.active"
+                    (click)="onSeclectSetionAbnormal(item)"
+                    [class]="
+                    item.ResultId == 2
+                    ? 'btn outsideShadowExam item-section col-4 fz-14'
+                    : 'btn insideShadow item-section col-4 fz-14 bgw'
+                "
+                >
+                    Abnormal
+                </button>
+            </div>
+        </div>
+    </div>
+    <div
+        *ngIf="leftRight.length"
+        class="col-5"
+    >
+        <div *ngFor="let item of leftRight; let ix = index">
+            <div
+                *ngIf="item.LeftRight === 0"
+                class="row style-bt-mt"
+            >
+                <div
+                    class="col-12"
+                    *ngFor="let i of item.ListResult0"
+                >
+                    <button
+                        (click)="onSeclectionLeftRigt(item, 0, i)"
+                        [class]="
+              i.checked
+                ? 'btn outsideShadowExam w-100 mb-2'
+                : 'btn insideShadow w-100 mb-2'
+            "
+                    >
+                        {{ i?.name }}
+                    </button>
+                </div>
+            </div>
+            <div
+                *ngIf="item.LeftRight !== 0"
+                class="row style-bt-mt"
+            >
+                <div class="col-6">
+                    <button
+                        *ngIf="ix === 0"
+                        class="w-100 title btn mb-2"
+                    >Left</button>
+                    <button
+                        *ngFor="let i of item.ListResult1"
+                        [class]="
+              i.checked
+                ? 'btn outsideShadowExam w-100 mb-2'
+                : 'btn insideShadow w-100 mb-2'
+            "
+                        (click)="onSeclectionLeftRigt(item, 1, i)"
+                    >
+                        {{ i?.name }}
+                    </button>
+                </div>
+                <div class="col-6">
+                    <button
+                        *ngIf="ix === 0"
+                        class="btn w-100 title mb-2"
+                    >Right</button>
+                    <button
+                        *ngFor="let i of item.ListResult2"
+                        [class]="
+              i.checked
+                ? 'btn outsideShadowExam w-100 mb-2'
+                : 'btn insideShadow w-100 mb-2'
+            "
+                        (click)="onSeclectionLeftRigt(item, 2, i)"
+                    >
+                        {{ i?.name }}
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

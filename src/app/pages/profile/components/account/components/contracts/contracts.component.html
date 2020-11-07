@@ -1,0 +1,124 @@
+<div class="container-fluid mb-4" style="height: 60vh">
+    <div class="row mr-1 mt-3 justify-content-end ">
+        <div class="col-2 selection insideShadow ">
+            <button class="material-icons float-left"
+                style="border: none; background-color: #f6f6f6; top: 7px; left: 10px; position: absolute;">
+                keyboard_arrow_left
+            </button>
+            <p style="line-height: 40px; text-align: center;">All</p>
+            <button class="material-icons float-right"
+                style="border: none; background-color: #f6f6f6; position: absolute; right: 10px; top: 7px;">
+                keyboard_arrow_right
+            </button>
+        </div>
+    </div>
+    <div class="row ml-1 mt-3">
+        <div class="invoice">
+            <table mat-table matSort [dataSource]="dataSource"
+                class="mat-elevation-z8 table-hover text-center tableStyle">
+                <ng-container matColumnDef="Contract">
+                    <th mat-header-cell *matHeaderCellDef>
+                        Contract
+                    </th>
+                    <td mat-cell *matCellDef="let item">
+                        <div class="row justify-content-center">
+                            3 <mat-icon> assignment</mat-icon>
+                        </div>
+                    </td>
+                </ng-container>
+                <tr mat-header-row *matHeaderRowDef="displayedColumnsContract; sticky: true"></tr>
+                <tr mat-row *matRowDef="let row; columns: displayedColumnsContract; let item" [style.background]="
+                listContractId.includes(item.ContractId)
+                  ? '#DBDBDB'
+                  : ''
+              "></tr>
+            </table>
+        </div>
+        <div [ngClass]="check == false ? 'table-center' : 'check-table-center'">
+            <table mat-table matSort [dataSource]="dataSource"
+                class="mat-elevation-z8 table-hover text-center tableStyle">
+                <ng-container matColumnDef="checkbox">
+                    <th mat-header-cell *matHeaderCellDef>
+                        <input id="checkbox" type="checkbox" [checked]="isCheckAll">
+                        <label for="checkbox" (click)="selectAll()"></label>
+                    </th>
+                    <td mat-cell *matCellDef="let item">
+                        <input id="{{item.ContractId}}" name="check" type="checkbox" [checked]="isSelectAll">
+                        <label for="{{item.ContractId}}" (click)="chooseContract(item.ContractId)"></label>
+                    </td>
+                </ng-container>
+                <ng-container matColumnDef="No.">
+                    <th mat-header-cell *matHeaderCellDef>
+                        No.
+                    </th>
+                    <td mat-cell *matCellDef="let item">
+                        {{item.ContractId}}
+                    </td>
+                </ng-container>
+                <ng-container matColumnDef="Date">
+                    <th mat-header-cell *matHeaderCellDef>
+                        Date
+                    </th>
+                    <td mat-cell *matCellDef="let item">
+                        {{item.StartDate | date :'dd/MM/yyyy'}}
+                    </td>
+                </ng-container>
+                <ng-container matColumnDef="Amount">
+                    <th mat-header-cell *matHeaderCellDef>
+                        Amount
+                    </th>
+                    <td mat-cell *matCellDef="let item">
+                        {{item.Amount | number:'.'}} {{item.CurrencyCode}}
+                    </td>
+                </ng-container>
+                <ng-container matColumnDef="Unpaid">
+                    <th mat-header-cell *matHeaderCellDef>
+                        Unpaid
+                    </th>
+                    <td mat-cell *matCellDef="let item" style="color: #C88C8C">
+                        
+                    </td>
+                </ng-container>
+                <tr mat-header-row *matHeaderRowDef="displayedColumns; sticky: true"></tr>
+                <tr mat-row *matRowDef="let row; columns: displayedColumns; let item" [style.background]="
+                listContractId.includes(item.ContractId)
+                  ? '#DBDBDB'
+                  : ''
+              "></tr>
+            </table>
+        </div>
+        <div class="table-pay" [hidden]="check">
+            <table mat-table matSort [dataSource]="dataSource"
+                class="mat-elevation-z8 table-hover text-center tableStyle">
+                <ng-container matColumnDef="Pay">
+                    <th mat-header-cell *matHeaderCellDef>
+                        Pay
+                    </th>
+                    <td mat-cell *matCellDef="let item">
+                        <input type="text" [(ngModel)]="item.Amount" [hidden]="!listContractId.includes(item.ContractId)">
+                    </td>
+                </ng-container>
+                <tr mat-header-row *matHeaderRowDef="displayedColumnsPay; sticky: true"></tr>
+                <tr mat-row *matRowDef="let row; columns: displayedColumnsPay; let item" [style.background]="
+                    listContractId.includes(item.ContractId)
+                      ? '#DBDBDB'
+                      : ''
+                  "></tr>
+            </table>
+        </div>
+    </div>
+    <div style="position: absolute; top: 28em; right: 1rem;" [hidden]="check">
+        <div class="total">
+            <div style="width: 90px; height: 35px; background-color: white; border-radius: 24px; margin-right: 10px;">
+                Total:
+            </div>
+            <div style="width: 160px; height: 35px; background-color: white; border-radius: 24px; margin-right: 10px;">
+                <span>8.555.000 USD</span>
+            </div>
+        </div>
+        <div class="cancel-save">
+            <button class="btn cancel">Cancel</button>
+            <button class="btn save">Save</button>
+        </div>
+    </div>
+</div>

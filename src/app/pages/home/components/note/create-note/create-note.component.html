@@ -1,0 +1,42 @@
+<div class="container dialog-container">
+    <div class="row">
+        <div class="col">
+            <div class="title">
+                Add note
+            </div>
+        </div>
+        <div class="col">
+            <div class="float-right">
+                <button class="btn cancel" (click)="closeDialog()">Cancel</button>
+                <button class="btn save" (click)="createNote()">Save</button>
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="row">
+        <div class="col-1">
+            <span>Created:</span>
+        </div>
+        <div class="col">
+            <input type="date" [(ngModel)]="noteDate"> at <input type="time" [(ngModel)]="noteTime">
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-1">
+            <span>Subject:</span>
+        </div>
+        <div class="col">
+            <input type="text" [(ngModel)]="note.Title">
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-1">
+            <span>Body:</span>
+        </div>
+        <div class="col">
+            <textarea class="form-control" rows="3" [(ngModel)]="note.Content"></textarea>
+        </div>
+    </div>
+</div>

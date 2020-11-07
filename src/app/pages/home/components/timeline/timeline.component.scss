@@ -1,0 +1,17 @@
+.control-section {
+    // .e-toolbar .e-toolbar-items.e-tbar-pos {
+    //     display: none !important;
+    // }
+    .e-schedule .e-timeline-view .e-date-header-wrap table td,
+    .e-schedule .e-timeline-month-view .e-date-header-wrap table td {
+        background-color: #f2f2f2;
+        border-color: rgba(0, 0, 0, 0.12);
+        border-style: solid;
+        border-width: 0 0 1px 1px;
+        color: rgba(0, 0, 0, 0.87);
+    }
+    // .e-schedule .e-table-container {
+    //     position: absolute;
+    //     top: 5px;
+    // }
+}

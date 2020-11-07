@@ -1,0 +1,78 @@
+.search {
+    position: relative;
+    input {
+        width: 300px;
+        height: 38px;
+        border-radius: 15px;
+        background-color: #dbdbdb;
+        border: none;
+        padding: 0 10px 0 40px;
+        outline: none;
+    }
+    mat-icon {
+        position: absolute;
+        top: 8px;
+        left: 10px;
+    }
+}
+
+.cancel {
+    outline: none;
+    color: #8da2ae;
+    border: none !important;
+    background: none !important;
+    font-size: 20px;
+    position: absolute;
+    top: 25px;
+    right: 25px;
+}
+
+.list-item {
+    width: 300px;
+    height: 38px;
+    border-radius: 20px;
+    background-color: #ffffff;
+    .img {
+        width: 31px;
+        height: 31px;
+        border-radius: 50%;
+        margin: auto 5px;
+        // border: 1px solid;
+        img {
+            width: 31px;
+            height: 31px;
+            border-radius: 50%;
+        }
+    }
+    p {
+        margin: 0;
+    }
+}
+
+.clients {
+    width: 300px;
+    height: 30px;
+}
+
+.list-patient {
+    max-height: 400px;
+    overflow: auto;
+    width: 300px;
+    margin: auto;
+}
+
+::ng-deep {
+    .mat-dialog-container {
+        position: relative;
+        background-color: #f6f6f6 !important;
+    }
+}
+
+.align-self-center {
+    align-self: center;
+}
+.btn-active {
+    position: absolute;
+    bottom: 20px;
+    right: 25px;
+}

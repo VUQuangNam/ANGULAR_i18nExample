@@ -1,0 +1,32 @@
+<div class="container-fluid search-dialog">
+
+    <div class="row ">
+        <div class="search mx-auto mt-4">
+            <input placeholder="Search" (input)="searchPatient($event.target.value)" type="search">
+            <mat-icon>search</mat-icon>
+        </div>
+    </div>
+    <button class="cancel" (click)="closeDialog()">Cancel</button>
+    <br>
+    <div class="row">
+        <div class="clients mx-auto">
+            <p>Clients</p>
+        </div>
+    </div>
+    <div class="row list-patient ">
+        <div class="mx-auto" *ngFor="let item of patientsSub">
+            <div class="row list-item" >
+                <div class="img" (click)="routerLink(item.PatientId)">
+                    <img src="{{item.MediaURL}}" alt="">
+                </div>
+                <div class="ml-2" (click)="routerLink(item.PatientId)">
+                    <p>{{item.FirstName}} {{item.LastName}}</p>
+                    <p>ID: {{item.PatientId}}</p>
+                </div>
+                <mat-icon (click)="deletePatient(item.PatientId)">delete</mat-icon>
+            </div>
+
+            <br>
+        </div>
+    </div>
+</div>

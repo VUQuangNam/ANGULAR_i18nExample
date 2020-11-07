@@ -1,0 +1,100 @@
+<div class="container" style="margin-top: 2em">
+  <div class="row">
+    <div class="col-9 add-history">Add allegry</div>
+    <div class="col-3 btn-1">
+      <div class="button-group">
+        <button class="btn-cancel" (click)="closeDialog()">Cancel</button>
+        <button class="btn-save" (click)="createAllegryPatient()">Save</button>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="container" style="margin-top: 2em">
+  <div class="row">
+    <div class="col-2 title align-self-center">Allergy for:</div>
+    <div class="col-10 align-self-center">
+      <!-- <mat-form-field class="example-full-width">
+        <input
+          (input)="filterListAllergy($event.target.value)"
+          [(ngModel)]="searchField"
+          matInput
+          name="search1"
+          autocomplete="off"
+        />
+      </mat-form-field>
+      <mat-selection-list class="example-full-width" [multiple]="false">
+        <mat-list-option
+          *ngFor="let item of filterAllergy"
+          [value]="item.Name"
+          (click)="onChangeValue(item)"
+        >
+          {{ item.Name }}
+        </mat-list-option>
+      </mat-selection-list> -->
+      <mat-form-field class="example-full-width">
+        <mat-select [(ngModel)]="allergyId" name="AllergyId">
+          <mat-option
+            *ngFor="let item of allergyList"
+            [value]="item.AllergyId"
+            (click)="onChangeValue(item)"
+          >
+            {{ item.Name }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-2 title align-self-center">Since:</div>
+    <div class="col-10 align-self-center">
+      <input
+        matInput
+        type="date"
+        name="date"
+        required
+        class="date-time"
+        [(ngModel)]="startDate"
+      />
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-2 title-1 align-self-center">Symptoms</div>
+    <div class="col-10 align-self-center">
+      <mat-form-field class="example-full-width">
+        <input
+          type="text"
+          matInput
+          name="problem"
+          [(ngModel)]="name"
+          (input)="searchTermSymptom($event.target.value)"
+          autocomplete="off"
+        />
+        <mat-spinner *ngIf="!isLoading" matSuffix [diameter]="18"></mat-spinner>
+      </mat-form-field>
+      <mat-selection-list class="example-full-width" [multiple]="false">
+        <mat-list-option
+          *ngFor="let item of symptomsList"
+          [value]="item.SymptomSNOMEDCode"
+          (click)="setTermValue(item)"
+        >
+          {{ item.FullName }}
+        </mat-list-option>
+      </mat-selection-list>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-2 title align-self-center">Frequency</div>
+    <div class="col-10 align-self-center">
+      <mat-form-field class="example-full-width">
+        <input
+          matInput
+          type="text"
+          name="date"
+          required
+          class="date-time"
+          [(ngModel)]="frequency"
+        />
+      </mat-form-field>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,131 @@
+<div class="container-fluid" style="margin-top: 2em">
+    <div class="row justify-content-between">
+        <div class="col-9 add-history" *ngIf="check == 3">Edit symptom</div>
+        <div class="col-9 add-history" *ngIf="check == 4">Edit review of systems</div>
+        <div class="col-9 add-history" *ngIf="check == 5">Edit daily life</div>
+        <div class="col-9 add-history" *ngIf="check == 6">Edit medication</div>
+        <div class="col-3 btn-1">
+            <div class="button-group">
+                <button class="btn-cancel" (click)="closeDialog()">Cancel</button>
+                <button class="btn-save" (click)="closeDialog()">Save</button>
+            </div>
+        </div>
+    </div>
+    <div class="row new-symptons" *ngIf="check == 3">
+        <div class="col-2">New symptoms</div>
+        <div class="col-4">
+            <p *ngFor="let newSymptom of listNewSymptom">{{newSymptom.SymptomName}}</p>
+        </div>
+        <div class="col-6">
+            <div class="row" *ngFor="let newSymptom of listNewSymptom">
+                <div class="col-1,5" style="display: flex; flex-direction: column;">
+                    <div class="btn">
+                        <input [checked]="newSymptom.ResultCode == 0" id="{{newSymptom.SymptomId}}-no" type="radio" />
+                        <label (click)="updateSymptom(newSymptom.VisitSymptomId, newSymptom.ProblemId, newSymptom.SymptomId, newSymptom.SymptomGroupType, 0)" for="{{newSymptom.SymptomId}}-no">
+                            <p>No</p>
+                        </label>
+                        <input [checked]="newSymptom.ResultCode == 1" id="{{newSymptom.SymptomId}}-yes" type="radio" />
+                        <label (click)="updateSymptom(newSymptom.VisitSymptomId, newSymptom.ProblemId, newSymptom.SymptomId, newSymptom.SymptomGroupType, 1)" for="{{newSymptom.SymptomId}}-yes">
+                            <p>Yes</p>
+                        </label>
+                    </div>
+                </div>
+                <div>
+                    <mat-icon (click)="deleteSymptom(newSymptom.VisitSymptomId)">delete</mat-icon>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row new-symptons " *ngIf="check == 4">
+        <div class="col-2">Review of systems</div>
+        <div class="col-4">
+            <p *ngFor="let review of listReview">{{review.SymptomName}}</p>
+        </div>
+        <div class="col-6">
+            <div class="row" *ngFor="let review of listReview">
+                <div class="col-1,5" style="display: flex; flex-direction: column;">
+                    <div class="btn">
+                        <input [checked]="review.ResultCode == 0" id="{{review.SymptomId}}-no" type="radio" />
+                        <label (click)="updateSymptom(review.VisitSymptomId, review.ProblemId, review.SymptomId, review.SymptomGroupType, 0)" for="{{review.SymptomId}}-no">
+                            <p>No</p>
+                        </label>
+                        <input [checked]="review.ResultCode == 1" id="{{review.SymptomId}}-yes" type="radio" />
+                        <label (click)="updateSymptom(review.VisitSymptomId, review.ProblemId, review.SymptomId, review.SymptomGroupType, 1)" for="{{review.SymptomId}}-yes ">
+                            <p>Yes</p>
+                        </label>
+                    </div>
+                </div>
+                <div>
+                    <mat-icon (click)="deleteSymptom(review.VisitSymptomId)">delete</mat-icon>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row new-symptons " *ngIf="check == 5">
+        <div class="col-2 ">Daily life</div>
+        <div class="col-4 ">
+            <p *ngFor="let daily of listDaily ">{{daily.SymptomName}}</p>
+        </div>
+        <div class="col-6 ">
+            <div class="row " *ngFor="let daily of listDaily ">
+                <div class="col-1,5 " style="display: flex; flex-direction: column; ">
+                    <div class="btn ">
+                        <input [checked]="daily.ResultCode == 0 " id="{{daily.SymptomId}}-no " type="radio" />
+                        <label (click)="updateSymptom(daily.VisitSymptomId, daily.ProblemId, daily.SymptomId, daily.SymptomGroupType, 0)" for="{{daily.SymptomId}}-no ">
+                            <p>No</p>
+                        </label>
+                        <input [checked]="daily.ResultCode == 1 " id="{{daily.SymptomId}}-yes " type="radio" />
+                        <label (click)="updateSymptom(daily.VisitSymptomId, daily.ProblemId, daily.SymptomId, daily.SymptomGroupType, 1)" for="{{daily.SymptomId}}-yes ">
+                            <p>Yes</p>
+                        </label>
+                    </div>
+                </div>
+                <div>
+                    <mat-icon (click)="deleteSymptom(daily.VisitSymptomId)">delete</mat-icon>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row new-symptons mb-3  " *ngIf="check == 6">
+        <div class="col-2 ">Medication</div>
+        <div class="col-3 " style="padding-right: 0; ">
+            <p>Your current Medication</p>
+            <p *ngFor="let medication of listMedication ">{{medication.SymptomName}}</p>
+        </div>
+        <div class="col-3 " style=" padding: 0; ">
+            <p style="margin: 0px 50px; ">Take it?</p>
+            <div class="medication " *ngFor="let medication of listMedication ">
+
+                <input [checked]="medication.ResultCode == 0 " id="{{medication.SymptomId}}-no " type="radio" />
+                <label (click)="updateSymptom(medication.VisitSymptomId, medication.ProblemId, medication.SymptomId, medication.SymptomGroupType, 0)" for="{{medication.SymptomId}}-no ">
+                    <p>No</p>
+                </label>
+                <input [checked]="medication.ResultCode == 1 " id="{{medication.SymptomId}}-yes " type="radio" />
+                <label (click)="updateSymptom(medication.VisitSymptomId, medication.ProblemId, medication.SymptomId, medication.SymptomGroupType, 1)" for="{{medication.SymptomId}}-yes ">
+                    <p>Yes</p>
+                </label>
+                <div>
+                    <mat-icon (click)="deleteSymptom(medication.VisitSymptomId)">delete</mat-icon>
+                </div>
+            </div>
+        </div>
+        <div class="col-3 p-0 ">
+            <p style="margin: 0px 45px; ">Tolerated?</p>
+            <div [hidden]="medication.ResultCode == 0" class="medication" *ngFor="let medication of listMedication ">
+                <input [checked]="checkFocus == false" id="no " type="radio" />
+                <label (click)="clickNo()" for="no">
+                    <p>No</p>
+                </label>
+                <input [checked]="checkFocus == true" id="yes" type="radio" />
+                <label (click)="clickYes()" for="yes">
+                    <p>Yes</p>
+                </label>
+                <div>
+                    <mat-icon (click)="deleteSymptom(medication.VisitSymptomId)">delete</mat-icon>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+</div>
